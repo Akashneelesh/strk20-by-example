@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and nullifiers, viewing keys, Cairo helper contracts and the privacy SDK."
+    />
+
+    <script src="https://use.fontawesome.com/ba3dde78ee.js"></script>
+    <link rel="manifest" href="/manifest.json" />
+    <title>STRK20 by Example</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      // This script tag here is, purposefully blocking the 1st render
+      // to avoid background flashes on page load/reload
+      // It does the bare minimum: checking the previous mode in the localStorage
+      const theme = localStorage.getItem("theme") || "light"
+      document.body.classList.add(theme)
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+src/pages/**/*.cairo
+src/search.json
+src/keywords.json
