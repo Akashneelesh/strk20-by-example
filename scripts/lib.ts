@@ -16,6 +16,7 @@ export async function exists(filePath: string): Promise<boolean> {
 
 export async function copy(fromFilePath: string, toFilePath: string) {
   const file = await readFile(fromFilePath)
+  await fs.promises.mkdir(path.dirname(toFilePath), { recursive: true })
   await writeFile(toFilePath, file)
 }
 

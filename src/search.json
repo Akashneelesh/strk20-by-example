@@ -1,1 +1,56 @@
-{}
+{
+  "strk20": [
+    "/what-is-strk20"
+  ],
+  "privacy": [
+    "/what-is-strk20"
+  ],
+  "pool": [
+    "/what-is-strk20"
+  ],
+  "starknet": [
+    "/what-is-strk20"
+  ],
+  "introduction": [
+    "/what-is-strk20"
+  ],
+  "overview": [
+    "/what-is-strk20"
+  ],
+  "sdk": [
+    "/sdk/getting-started"
+  ],
+  "setup": [
+    "/sdk/getting-started"
+  ],
+  "install": [
+    "/sdk/getting-started"
+  ],
+  "createPrivateTransfers": [
+    "/sdk/getting-started"
+  ],
+  "provider": [
+    "/sdk/getting-started"
+  ],
+  "quickstart": [
+    "/sdk/getting-started"
+  ],
+  "escrow": [
+    "/helpers/escrow"
+  ],
+  "helper": [
+    "/helpers/escrow"
+  ],
+  "commitment": [
+    "/helpers/escrow"
+  ],
+  "claim": [
+    "/helpers/escrow"
+  ],
+  "secret": [
+    "/helpers/escrow"
+  ],
+  "privacy_invoke": [
+    "/helpers/escrow"
+  ]
+}

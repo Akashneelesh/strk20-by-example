@@ -1,1 +1,26 @@
-{}
+{
+  "/what-is-strk20": [
+    "strk20",
+    "privacy",
+    "pool",
+    "starknet",
+    "introduction",
+    "overview"
+  ],
+  "/sdk/getting-started": [
+    "sdk",
+    "setup",
+    "install",
+    "createPrivateTransfers",
+    "provider",
+    "quickstart"
+  ],
+  "/helpers/escrow": [
+    "escrow",
+    "helper",
+    "commitment",
+    "claim",
+    "secret",
+    "privacy_invoke"
+  ]
+}
