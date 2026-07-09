@@ -1,0 +1,73 @@
+// metadata
+export const version = "0.14.2"
+export const title = "Deposit + Transfer"
+export const description =
+  "Deposit and transfer in one transaction, with surplusTo directing the remainder"
+export const githubLink =
+  "https://github.com/starkware-libs/starknet-privacy/blob/main/sdk/README.md"
+export const githubLabel = ""
+
+export const keywords = [
+  "deposit",
+  "transfer",
+  "surplusTo",
+  "compose",
+  "batch",
+  "change",
+]
+
+export const codes = []
+
+const html = `<p>Operations on the same token compose inside one <code>.with(...)</code> block, and the
+whole batch settles atomically in one transaction. The classic case: deposit
+100 and immediately transfer 60 to Bob. Omit the <code>recipient</code> on the deposit
+and let <code>surplusTo</code> direct whatever is left - the SDK resolves the
+intermediate steps.</p>
+<p>Snippets assume <code>transfers</code>, <code>account</code> and <code>provider</code> from
+<a href="/sdk/getting-started">Getting Started</a>. The ERC-20 <code>approve</code> is still a
+separate transaction first (see <a href="/sdk/deposit">Deposit</a>).</p>
+<pre><code class="language-typescript"><span class="hljs-comment">// Transaction 1 - approve (identical to the Deposit page).</span>
+<span class="hljs-keyword">const</span> approveTx = <span class="hljs-keyword">await</span> account.<span class="hljs-title function_">execute</span>(
+  {
+    <span class="hljs-attr">contractAddress</span>: tokenAddress,
+    <span class="hljs-attr">entrypoint</span>: <span class="hljs-string">"approve"</span>,
+    <span class="hljs-attr">calldata</span>: [poolAddress, <span class="hljs-number">100n</span>.<span class="hljs-title function_">toString</span>(), <span class="hljs-string">"0"</span>],
+  },
+  { <span class="hljs-attr">tip</span>: <span class="hljs-number">0n</span> },
+)
+<span class="hljs-keyword">await</span> provider.<span class="hljs-title function_">waitForTransaction</span>(approveTx.<span class="hljs-property">transaction_hash</span>)
+
+<span class="hljs-comment">// Transaction 2 - deposit 100, transfer 60, keep 40.</span>
+<span class="hljs-keyword">const</span> provingBlockId = (<span class="hljs-keyword">await</span> provider.<span class="hljs-title function_">getBlockNumber</span>()) - <span class="hljs-number">10</span>
+
+<span class="hljs-keyword">const</span> { callAndProof } = <span class="hljs-keyword">await</span> transfers
+  .<span class="hljs-title function_">build</span>({ <span class="hljs-attr">autoSetup</span>: <span class="hljs-literal">true</span> })
+  .<span class="hljs-title function_">surplusTo</span>(account.<span class="hljs-property">address</span>) <span class="hljs-comment">// the 40n remainder becomes my note</span>
+  .<span class="hljs-title function_">with</span>(tokenAddress, <span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span>
+    t.<span class="hljs-title function_">deposit</span>({ <span class="hljs-attr">amount</span>: <span class="hljs-number">100n</span> }).<span class="hljs-title function_">transfer</span>({ <span class="hljs-attr">recipient</span>: bob, <span class="hljs-attr">amount</span>: <span class="hljs-number">60n</span> }),
+  )
+  .<span class="hljs-title function_">execute</span>({ provingBlockId })
+
+<span class="hljs-keyword">const</span> proofDetails = callAndProof.<span class="hljs-property">proof</span>.<span class="hljs-property">proofFacts</span>?.<span class="hljs-property">length</span>
+  ? { <span class="hljs-attr">proofFacts</span>: callAndProof.<span class="hljs-property">proof</span>.<span class="hljs-property">proofFacts</span>, <span class="hljs-attr">proof</span>: callAndProof.<span class="hljs-property">proof</span>.<span class="hljs-property">data</span> }
+  : {}
+<span class="hljs-keyword">const</span> tx = <span class="hljs-keyword">await</span> account.<span class="hljs-title function_">execute</span>(callAndProof.<span class="hljs-property">call</span>, { <span class="hljs-attr">tip</span>: <span class="hljs-number">0n</span>, ...proofDetails })
+<span class="hljs-keyword">await</span> provider.<span class="hljs-title function_">waitForTransaction</span>(tx.<span class="hljs-property">transaction_hash</span>)
+</code></pre><h2>Things to notice</h2>
+<ul>
+<li>The deposit has <strong>no <code>recipient</code></strong>. Its 100n enters the token&#39;s balance
+sheet for this transaction; the transfer takes 60n; <code>surplusTo</code> claims the
+remaining 40n. Pinning <code>recipient</code> on the deposit would instead lock the
+full 100n into a note and force the transfer to find other inputs.</li>
+<li>Bob&#39;s 60n note is spendable by Bob after 10 blocks; your 40n surplus note
+likewise. The transfer itself needs <strong>no</strong> maturity wait - the deposited
+funds are consumed within the same transaction, never as a note.</li>
+<li>Everything is atomic: if the transfer cannot be resolved, no deposit
+happens either.</li>
+<li>Balance-sheet rule per token: deposits + inputs must cover transfers +
+withdrawals, with <code>surplusTo</code> absorbing any remainder.</li>
+</ul>
+<p>Next: <a href="/sdk/withdraw">Withdraw</a> private funds back to a public address.</p>
+`
+
+export default html

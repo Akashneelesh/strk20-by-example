@@ -2,12 +2,15 @@
 export const version = "0.14.2"
 export const title = "Getting Started"
 export const description =
-  "Install the Starknet privacy SDK and wire up createPrivateTransfers"
+  "Build privacy wallets on Starknet with the low-level STRK20 SDK and createPrivateTransfers"
 export const githubLink =
   "https://github.com/starkware-libs/starknet-privacy/blob/main/sdk/README.md"
+export const githubLabel = ""
 
 export const keywords = [
-  "sdk",
+  "build privacy wallets",
+  "privacy wallet sdk",
+  "wallet builder",
   "setup",
   "install",
   "createPrivateTransfers",
@@ -17,8 +20,12 @@ export const keywords = [
 
 export const codes = []
 
-const html = `<p>The privacy SDK is a TypeScript library for building apps on the privacy pool.
-Everything goes through one factory: <code>createPrivateTransfers</code>.</p>
+const html = `<p>These pages are for teams building <strong>privacy wallets on Starknet</strong> or advanced
+integrations that manage their own account, keys, note discovery, and proving.
+If you are building a private dapp on top of an existing wallet, use the
+<a href="/starknet-wallet-api/overview">Starknet Wallet API</a> instead - it keeps viewing
+keys inside the wallet. Everything here goes through one factory:
+<code>createPrivateTransfers</code>.</p>
 <h2>Install</h2>
 <pre><code class="language-shell">npm install @starkware-libs/starknet-privacy-sdk
 </code></pre><h2>Wire it up</h2>
@@ -69,10 +76,7 @@ and a <strong>discovery provider</strong> (finds your notes and channels).</p>
 <span class="hljs-comment">// creation, and proving at the chain head risks reorg invalidation.</span>
 <span class="hljs-keyword">const</span> provingBlockId = (<span class="hljs-keyword">await</span> provider.<span class="hljs-title function_">getBlockNumber</span>()) - <span class="hljs-number">10</span>
 
-<span class="hljs-keyword">const</span> { callAndProof } = <span class="hljs-keyword">await</span> transfers
-  .<span class="hljs-title function_">build</span>()
-  .<span class="hljs-title function_">register</span>()
-  .<span class="hljs-title function_">execute</span>({ provingBlockId })
+<span class="hljs-keyword">const</span> { callAndProof } = <span class="hljs-keyword">await</span> transfers.<span class="hljs-title function_">build</span>().<span class="hljs-title function_">register</span>().<span class="hljs-title function_">execute</span>({ provingBlockId })
 
 <span class="hljs-comment">// Omit proof keys entirely when there are no proof facts - passing</span>
 <span class="hljs-comment">// empty arrays serializes an invalid v3 transaction.</span>
@@ -85,8 +89,8 @@ and a <strong>discovery provider</strong> (finds your notes and channels).</p>
 
 <span class="hljs-keyword">await</span> provider.<span class="hljs-title function_">waitForTransaction</span>(tx.<span class="hljs-property">transaction_hash</span>)
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">\`registered in tx <span class="hljs-subst">\${tx.transaction_hash}</span>\`</span>)
-</code></pre><p>This submission tail — back off <code>provingBlockId</code>, conditionally spread
-<code>proofDetails</code>, pass <code>tip: 0n</code>, wait — is identical for every operation in the
+</code></pre><p>This submission tail - back off <code>provingBlockId</code>, conditionally spread
+<code>proofDetails</code>, pass <code>tip: 0n</code>, wait - is identical for every operation in the
 following pages. We will not repeat the explanation, just the code.</p>
 <h2>What each provider does</h2>
 <table>

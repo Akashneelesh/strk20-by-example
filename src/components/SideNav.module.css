@@ -3,10 +3,26 @@
   padding: 0;
   margin: 0;
 }
+.nestedList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
 .title {
   color: var(--link-color);
   padding: 0;
   margin: 0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.group {
+  margin: 10px 0 14px 0;
+}
+.groupTitle {
+  color: var(--text-color);
+  padding: 0;
+  margin: 0 0 4px 10px;
+  font-size: 0.95rem;
 }
 .listItem {
   display: flex;

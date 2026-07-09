@@ -27,5 +27,5 @@ diffable against upstream.
 These files are **not compiled standalone in v1**: page slugs are kebab-case
 (not valid Cairo module names) and the helpers depend on the privacy pool
 package (`privacy::objects::OpenNoteDeposit`). All of them are adapted from
-code that compiles and is tested in the upstream monorepo — compile
+code that compiles and is tested in the upstream monorepo - compile
 verification happens there.

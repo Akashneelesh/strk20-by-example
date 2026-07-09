@@ -83,6 +83,7 @@ async function mdToHtml(filePath: string) {
       description: metadata.description,
       keywords: metadata.keywords,
       githubLink: metadata.githubLink || "",
+      githubLabel: metadata.githubLabel || "",
       codes: Object.entries(codes).map(([key, val]) => ({
         key: fileNames[key],
         val: Buffer.from(val).toString("base64"),

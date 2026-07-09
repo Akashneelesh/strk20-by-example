@@ -13,6 +13,11 @@
 .category {
   color: var(--link-color);
 }
+.groupTitle {
+  color: var(--text-color);
+  margin: 10px 0 0 0;
+  font-size: 0.95rem;
+}
 .search {
   margin-top: 10px;
   margin-bottom: 10px;

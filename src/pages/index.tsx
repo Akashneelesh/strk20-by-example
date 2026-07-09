@@ -77,17 +77,32 @@ export default function HomePage() {
 
     return (
       <>
-        {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
+        {ROUTES_BY_CATEGORY.map(({ routes = [], groups = [], title }, i) => (
           <div key={i}>
             {title && <h3 className={styles.category}>{title}</h3>}
 
-            <ul className={styles.list}>
-              {routes.map(({ path, title }) => (
-                <li className={styles.listItem} key={path}>
-                  <a href={path}>{title}</a>
-                </li>
-              ))}
-            </ul>
+            {routes.length > 0 && (
+              <ul className={styles.list}>
+                {routes.map(({ path, title }) => (
+                  <li className={styles.listItem} key={path}>
+                    <a href={path}>{title}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {groups.map((group) => (
+              <div key={group.title}>
+                <h4 className={styles.groupTitle}>{group.title}</h4>
+                <ul className={styles.list}>
+                  {group.routes.map(({ path, title }) => (
+                    <li className={styles.listItem} key={path}>
+                      <a href={path}>{title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         ))}
       </>
@@ -98,7 +113,7 @@ export default function HomePage() {
     <div className={styles.component}>
       <SEO
         title="STRK20 by Example"
-        description="Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and nullifiers, viewing keys, Cairo helper contracts and the privacy SDK"
+        description="Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and nullifiers, viewing keys, the Starknet Wallet API, helper contracts, and wallet-builder SDK flows"
       />
       <h1 className={styles.header}>
         <a href="/">STRK20 by Example</a>
@@ -110,8 +125,8 @@ export default function HomePage() {
           <a href="https://docs.starknet.io/build/starknet-privacy/overview">
             Starknet Privacy
           </a>{" "}
-          with simple examples: private transfers on a public chain, Cairo helper
-          contracts and the privacy SDK.
+          with simple examples: private transfers on a public chain, the Starknet Wallet
+          API, Cairo helper contracts, and wallet-builder SDK flows.
         </p>
 
         <div className={styles.updates}>

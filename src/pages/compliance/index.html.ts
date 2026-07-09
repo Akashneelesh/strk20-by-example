@@ -1,0 +1,89 @@
+// metadata
+export const version = "0.14.2"
+export const title = "Compliance & Auditing"
+export const description =
+  "Selective disclosure via an auditor-escrowed viewing key, fund tracing, and known privacy limits"
+export const githubLink = ""
+export const githubLabel = ""
+
+export const keywords = [
+  "compliance",
+  "auditor",
+  "selective disclosure",
+  "tracing",
+  "viewing key",
+]
+
+export const codes = []
+
+const html = `<p>STRK20 is private from the public, not from lawful oversight. The mechanism is
+a single ciphertext created at registration.</p>
+<h2>The escrowed viewing key</h2>
+<p>When a user registers (<code>SetViewingKey</code>), their <strong>private viewing key is
+encrypted to the auditor&#39;s public key</strong> - using the same ephemeral ECDH scheme
+as channels - and stored on-chain. The auditor&#39;s public key is set by
+governance, and can be a <strong>threshold key</strong>, so no single party can decrypt
+unilaterally.</p>
+<p>Disclosure is <strong>selective</strong>: the auditor decrypts only the viewing keys of
+users subject to a lawful request. Everyone else&#39;s transaction graph stays
+encrypted - there is no bulk-surveillance mode.</p>
+<h2>What a recovered viewing key reveals</h2>
+<p>With one user&#39;s private viewing key, an auditor can:</p>
+<ul>
+<li>open all their <strong>incoming channels</strong> - who paid them, how much, which token</li>
+<li>open all their <strong>outgoing channels</strong> - whom they paid</li>
+<li>decrypt every note amount and match published nullifiers to spent notes</li>
+<li>follow funds <strong>forward</strong> (deposit → notes → further transfers → withdrawals)
+and <strong>backward</strong> (withdrawal → notes → originating deposits)</li>
+</ul>
+<h2>What stays visible on-chain for everyone</h2>
+<table>
+<thead>
+<tr>
+<th>On-chain artifact</th>
+<th>Visible to all</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Registration event</td>
+<td>That an address joined; its escrowed key blob</td>
+</tr>
+<tr>
+<td>Deposit</td>
+<td>Depositor address, token and amount (plaintext ERC-20 <code>transfer_from</code>)</td>
+</tr>
+<tr>
+<td>Withdrawal event</td>
+<td>Recipient address, token and amount; user address also encrypted to the auditor</td>
+</tr>
+<tr>
+<td><code>UseNote</code></td>
+<td>A published nullifier (unlinkable without a viewing key)</td>
+</tr>
+<tr>
+<td>Open notes</td>
+<td>Token and filled amount in plaintext</td>
+</tr>
+</tbody></table>
+<h2>Auditors cannot spend</h2>
+<p>A viewing key is exactly that - a <em>viewing</em> key. Spending requires a valid
+account signature verified inside the proof, and the auditor has no
+transaction authority. Compromise of the auditor key would break
+confidentiality, never custody.</p>
+<h2>Known privacy limitations</h2>
+<p>Honest accounting of what the protocol does not hide:</p>
+<ul>
+<li><strong>Channel-open linkability</strong> - opening a channel and depositing or
+withdrawing in the same transaction (or in tight succession) can link a
+recipient to their public activity. Spread setup and movement over time.</li>
+<li><strong>Distinctive patterns</strong> - recognizable amounts, or rapid in-and-out
+sequences between deposit and withdrawal, weaken the anonymity set. This
+affects every privacy pool design.</li>
+<li><strong>Edges are public by design</strong> - deposits and withdrawals expose addresses
+and amounts; only movement <em>inside</em> the pool is encrypted.</li>
+</ul>
+<p>With the full concept set in hand, revisit <a href="/what-is-strk20">What is STRK20?</a>
+to see how the pieces fit together.</p>
+`
+
+export default html

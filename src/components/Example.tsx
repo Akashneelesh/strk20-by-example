@@ -19,6 +19,7 @@ interface Props {
   version: string
   html: string
   githubLink?: string
+  githubLabel?: string
   prev: Path | null
   next: Path | null
   codes: Code[]
@@ -29,6 +30,7 @@ const Example: React.FC<Props> = ({
   version,
   description,
   githubLink,
+  githubLabel,
   html,
   prev,
   next,
@@ -48,8 +50,9 @@ const Example: React.FC<Props> = ({
           <div className={styles.sourceLink}>
             View the full source in the{" "}
             <a href={githubLink} target="__blank">
-              starknet-privacy repo
+              {githubLabel || "starknet-privacy repo"}
             </a>
+            {!githubLabel && " (coming soon)"}
           </div>
         ) : null}
 

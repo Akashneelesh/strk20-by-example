@@ -31,3 +31,8 @@ memo.js
 memo
 crytic-export
 tmp
+.vercel
+.gstack/
+
+# serena tool cache
+.serena/

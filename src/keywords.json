@@ -7,13 +7,174 @@
     "introduction",
     "overview"
   ],
+  "/viewing-keys": [
+    "viewing key",
+    "encryption",
+    "ecdh",
+    "stark curve",
+    "masking",
+    "auditor"
+  ],
+  "/starknet-wallet-api/starknet-start-hook": [
+    "starknet-start",
+    "useStrk20",
+    "react hooks",
+    "wallet api",
+    "WalletAccountV6",
+    "private dapp",
+    "hooks"
+  ],
+  "/starknet-wallet-api/starknet-js": [
+    "starknet.js",
+    "WalletAccountV6",
+    "get-starknet",
+    "wallet api",
+    "private dapp",
+    "proof handling",
+    "connection"
+  ],
+  "/starknet-wallet-api/overview": [
+    "starknet wallet api",
+    "wallet api",
+    "starknet.js",
+    "useStrk20",
+    "WalletAccountV6",
+    "private dapp",
+    "shield",
+    "private transfer",
+    "withdraw",
+    "privacy wallet"
+  ],
+  "/sdk/withdraw": [
+    "withdraw",
+    "erc20",
+    "public",
+    "notes",
+    "maturity",
+    "surplusTo"
+  ],
+  "/sdk/transfer": [
+    "transfer",
+    "notes",
+    "inputs",
+    "surplusTo",
+    "change",
+    "autoSelectNotes"
+  ],
+  "/sdk/setup-requirements": [
+    "channels",
+    "subchannel",
+    "setup",
+    "discoverRequirement",
+    "SetupRequirement",
+    "autoSetup"
+  ],
+  "/sdk/register": [
+    "register",
+    "viewing key",
+    "builder",
+    "autoRegister",
+    "onboarding"
+  ],
+  "/sdk/proving-config": [
+    "proving",
+    "provingBlockId",
+    "proofFacts",
+    "nonce",
+    "reorg",
+    "maturity"
+  ],
+  "/sdk/note-discovery": [
+    "discovery",
+    "notes",
+    "cursor",
+    "AddressMap",
+    "registry",
+    "channels"
+  ],
+  "/sdk/multi-op-batch": [
+    "batch",
+    "multi-token",
+    "compose",
+    "builder",
+    "atomic",
+    "invoke"
+  ],
   "/sdk/getting-started": [
-    "sdk",
+    "build privacy wallets",
+    "privacy wallet sdk",
+    "wallet builder",
     "setup",
     "install",
     "createPrivateTransfers",
     "provider",
     "quickstart"
+  ],
+  "/sdk/discovery-providers": [
+    "discovery",
+    "indexer",
+    "contract",
+    "provider",
+    "rate limit",
+    "deep import"
+  ],
+  "/sdk/deposit-transfer-surplus": [
+    "deposit",
+    "transfer",
+    "surplusTo",
+    "compose",
+    "batch",
+    "change"
+  ],
+  "/sdk/deposit": [
+    "deposit",
+    "erc20",
+    "approve",
+    "surplusTo",
+    "note",
+    "maturity"
+  ],
+  "/overview": [
+    "overview",
+    "get started",
+    "strk20",
+    "privacy stack",
+    "wallet api",
+    "helper contracts",
+    "privacy sdk"
+  ],
+  "/notes-and-nullifiers": [
+    "note",
+    "nullifier",
+    "utxo",
+    "open note",
+    "double-spend",
+    "poseidon"
+  ],
+  "/helpers/vesu-lending-helper": [
+    "vesu",
+    "lending",
+    "vault",
+    "erc4626",
+    "vtoken",
+    "helper",
+    "yield"
+  ],
+  "/helpers/swap-helper": [
+    "swap",
+    "amm",
+    "dex",
+    "helper",
+    "balance delta",
+    "privacy_invoke"
+  ],
+  "/helpers/privacy-invoke": [
+    "privacy_invoke",
+    "helper",
+    "invoke",
+    "opennotedeposit",
+    "anonymizing",
+    "defi"
   ],
   "/helpers/escrow": [
     "escrow",
@@ -22,5 +183,44 @@
     "claim",
     "secret",
     "privacy_invoke"
+  ],
+  "/compliance": [
+    "compliance",
+    "auditor",
+    "selective disclosure",
+    "tracing",
+    "viewing key"
+  ],
+  "/channels-and-subchannels": [
+    "channel",
+    "subchannel",
+    "discovery",
+    "scanning",
+    "note index",
+    "channel key"
+  ],
+  "/builder-privacy-overview": [
+    "builder overview",
+    "privacy stack",
+    "starknet wallet api",
+    "wallet api",
+    "build privacy wallets",
+    "privacy wallet sdk",
+    "helper contracts",
+    "sub-accounts",
+    "prover",
+    "strk20"
+  ],
+  "/app/anonymous-airdrop": [
+    "airdrop",
+    "anonymous airdrop"
+  ],
+  "/actions-and-proofs": [
+    "actions",
+    "phases",
+    "balance invariant",
+    "stwo",
+    "proof",
+    "virtual execution"
   ]
 }

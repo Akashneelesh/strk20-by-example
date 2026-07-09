@@ -1,7 +1,7 @@
 # STRK20 by Example
 
-Learn Starknet Privacy (STRK20) with simple examples — privacy pools, notes and
-nullifiers, viewing keys, Cairo helper contracts and the TypeScript privacy SDK.
+Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and
+nullifiers, viewing keys, the Starknet Wallet API, Cairo helper contracts, and wallet-builder SDK flows.
 
 Built in the mold of [Solidity by Example](https://solidity-by-example.org)
 (forked architecture, MIT licensed). Content is sourced from the
@@ -47,7 +47,7 @@ npm run preview
    ````
 
    TypeScript SDK snippets are written inline in ```typescript fences
-   (do NOT add `.ts` files under `src/pages/` — they'd be typechecked by the app build).
+   (do NOT add `.ts` files under `src/pages/` - they'd be typechecked by the app build).
 
 3. Generate the page (or all pages):
 
@@ -67,11 +67,11 @@ npm run preview
 5. `npm start` and eyeball it.
 
 Note: after ANY change to `scripts/md-to-react.ts`, the mustache templates, or
-highlighting, run `npm run pages:all` — highlighted HTML is frozen into
+highlighting, run `npm run pages:all` - highlighted HTML is frozen into
 `index.html.ts` at generation time.
 
 ### Contracts
 
 `contracts/` holds the Cairo sources for example pages, adapted from the
-starknet-privacy monorepo. They are not compiled standalone in v1 — see
+starknet-privacy monorepo. They are not compiled standalone in v1 - see
 `contracts/README.md`.

@@ -90,6 +90,7 @@ export interface Metadata {
   version: string
   keywords: string[]
   githubLink?: string
+  githubLabel?: string
 }
 
 function findIndexOfFrontMatter(lines: string[]): number {
@@ -114,9 +115,10 @@ function getMetadata(lines: string[]): Metadata {
     version,
     keywords,
     githubLink = "",
+    githubLabel = "",
   } = yaml.parse(lines.slice(1, -1).join("\n"))
 
-  return { title, description, version, keywords, githubLink }
+  return { title, description, version, keywords, githubLink, githubLabel }
 }
 
 export async function parseYaml(filePath: string): Promise<{

@@ -1,13 +1,27 @@
 ---
 title: Getting Started
 version: 0.14.2
-description: Install the Starknet privacy SDK and wire up createPrivateTransfers
-keywords: [sdk, setup, install, createPrivateTransfers, provider, quickstart]
+description: Build privacy wallets on Starknet with the low-level STRK20 SDK and createPrivateTransfers
+keywords:
+  [
+    build privacy wallets,
+    privacy wallet sdk,
+    wallet builder,
+    setup,
+    install,
+    createPrivateTransfers,
+    provider,
+    quickstart,
+  ]
 githubLink: https://github.com/starkware-libs/starknet-privacy/blob/main/sdk/README.md
 ---
 
-The privacy SDK is a TypeScript library for building apps on the privacy pool.
-Everything goes through one factory: `createPrivateTransfers`.
+These pages are for teams building **privacy wallets on Starknet** or advanced
+integrations that manage their own account, keys, note discovery, and proving.
+If you are building a private dapp on top of an existing wallet, use the
+[Starknet Wallet API](/starknet-wallet-api/overview) instead - it keeps viewing
+keys inside the wallet. Everything here goes through one factory:
+`createPrivateTransfers`.
 
 ## Install
 
@@ -86,8 +100,8 @@ await provider.waitForTransaction(tx.transaction_hash)
 console.log(`registered in tx ${tx.transaction_hash}`)
 ```
 
-This submission tail — back off `provingBlockId`, conditionally spread
-`proofDetails`, pass `tip: 0n`, wait — is identical for every operation in the
+This submission tail - back off `provingBlockId`, conditionally spread
+`proofDetails`, pass `tip: 0n`, wait - is identical for every operation in the
 following pages. We will not repeat the explanation, just the code.
 
 ## What each provider does

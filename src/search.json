@@ -1,6 +1,8 @@
 {
   "strk20": [
-    "/what-is-strk20"
+    "/what-is-strk20",
+    "/overview",
+    "/builder-privacy-overview"
   ],
   "privacy": [
     "/what-is-strk20"
@@ -15,12 +17,217 @@
     "/what-is-strk20"
   ],
   "overview": [
-    "/what-is-strk20"
+    "/what-is-strk20",
+    "/overview"
   ],
-  "sdk": [
-    "/sdk/getting-started"
+  "viewing key": [
+    "/viewing-keys",
+    "/sdk/register",
+    "/compliance"
+  ],
+  "encryption": [
+    "/viewing-keys"
+  ],
+  "ecdh": [
+    "/viewing-keys"
+  ],
+  "stark curve": [
+    "/viewing-keys"
+  ],
+  "masking": [
+    "/viewing-keys"
+  ],
+  "auditor": [
+    "/viewing-keys",
+    "/compliance"
+  ],
+  "starknet-start": [
+    "/starknet-wallet-api/starknet-start-hook"
+  ],
+  "useStrk20": [
+    "/starknet-wallet-api/starknet-start-hook",
+    "/starknet-wallet-api/overview"
+  ],
+  "react hooks": [
+    "/starknet-wallet-api/starknet-start-hook"
+  ],
+  "wallet api": [
+    "/starknet-wallet-api/starknet-start-hook",
+    "/starknet-wallet-api/starknet-js",
+    "/starknet-wallet-api/overview",
+    "/overview",
+    "/builder-privacy-overview"
+  ],
+  "WalletAccountV6": [
+    "/starknet-wallet-api/starknet-start-hook",
+    "/starknet-wallet-api/starknet-js",
+    "/starknet-wallet-api/overview"
+  ],
+  "private dapp": [
+    "/starknet-wallet-api/starknet-start-hook",
+    "/starknet-wallet-api/starknet-js",
+    "/starknet-wallet-api/overview"
+  ],
+  "hooks": [
+    "/starknet-wallet-api/starknet-start-hook"
+  ],
+  "starknet.js": [
+    "/starknet-wallet-api/starknet-js",
+    "/starknet-wallet-api/overview"
+  ],
+  "get-starknet": [
+    "/starknet-wallet-api/starknet-js"
+  ],
+  "proof handling": [
+    "/starknet-wallet-api/starknet-js"
+  ],
+  "connection": [
+    "/starknet-wallet-api/starknet-js"
+  ],
+  "starknet wallet api": [
+    "/starknet-wallet-api/overview",
+    "/builder-privacy-overview"
+  ],
+  "shield": [
+    "/starknet-wallet-api/overview"
+  ],
+  "private transfer": [
+    "/starknet-wallet-api/overview"
+  ],
+  "withdraw": [
+    "/starknet-wallet-api/overview",
+    "/sdk/withdraw"
+  ],
+  "privacy wallet": [
+    "/starknet-wallet-api/overview"
+  ],
+  "erc20": [
+    "/sdk/withdraw",
+    "/sdk/deposit"
+  ],
+  "public": [
+    "/sdk/withdraw"
+  ],
+  "notes": [
+    "/sdk/withdraw",
+    "/sdk/transfer",
+    "/sdk/note-discovery"
+  ],
+  "maturity": [
+    "/sdk/withdraw",
+    "/sdk/proving-config",
+    "/sdk/deposit"
+  ],
+  "surplusTo": [
+    "/sdk/withdraw",
+    "/sdk/transfer",
+    "/sdk/deposit-transfer-surplus",
+    "/sdk/deposit"
+  ],
+  "transfer": [
+    "/sdk/transfer",
+    "/sdk/deposit-transfer-surplus"
+  ],
+  "inputs": [
+    "/sdk/transfer"
+  ],
+  "change": [
+    "/sdk/transfer",
+    "/sdk/deposit-transfer-surplus"
+  ],
+  "autoSelectNotes": [
+    "/sdk/transfer"
+  ],
+  "channels": [
+    "/sdk/setup-requirements",
+    "/sdk/note-discovery"
+  ],
+  "subchannel": [
+    "/sdk/setup-requirements",
+    "/channels-and-subchannels"
   ],
   "setup": [
+    "/sdk/setup-requirements",
+    "/sdk/getting-started"
+  ],
+  "discoverRequirement": [
+    "/sdk/setup-requirements"
+  ],
+  "SetupRequirement": [
+    "/sdk/setup-requirements"
+  ],
+  "autoSetup": [
+    "/sdk/setup-requirements"
+  ],
+  "register": [
+    "/sdk/register"
+  ],
+  "builder": [
+    "/sdk/register",
+    "/sdk/multi-op-batch"
+  ],
+  "autoRegister": [
+    "/sdk/register"
+  ],
+  "onboarding": [
+    "/sdk/register"
+  ],
+  "proving": [
+    "/sdk/proving-config"
+  ],
+  "provingBlockId": [
+    "/sdk/proving-config"
+  ],
+  "proofFacts": [
+    "/sdk/proving-config"
+  ],
+  "nonce": [
+    "/sdk/proving-config"
+  ],
+  "reorg": [
+    "/sdk/proving-config"
+  ],
+  "discovery": [
+    "/sdk/note-discovery",
+    "/sdk/discovery-providers",
+    "/channels-and-subchannels"
+  ],
+  "cursor": [
+    "/sdk/note-discovery"
+  ],
+  "AddressMap": [
+    "/sdk/note-discovery"
+  ],
+  "registry": [
+    "/sdk/note-discovery"
+  ],
+  "batch": [
+    "/sdk/multi-op-batch",
+    "/sdk/deposit-transfer-surplus"
+  ],
+  "multi-token": [
+    "/sdk/multi-op-batch"
+  ],
+  "compose": [
+    "/sdk/multi-op-batch",
+    "/sdk/deposit-transfer-surplus"
+  ],
+  "atomic": [
+    "/sdk/multi-op-batch"
+  ],
+  "invoke": [
+    "/sdk/multi-op-batch",
+    "/helpers/privacy-invoke"
+  ],
+  "build privacy wallets": [
+    "/sdk/getting-started",
+    "/builder-privacy-overview"
+  ],
+  "privacy wallet sdk": [
+    "/sdk/getting-started",
+    "/builder-privacy-overview"
+  ],
+  "wallet builder": [
     "/sdk/getting-started"
   ],
   "install": [
@@ -30,15 +237,115 @@
     "/sdk/getting-started"
   ],
   "provider": [
-    "/sdk/getting-started"
+    "/sdk/getting-started",
+    "/sdk/discovery-providers"
   ],
   "quickstart": [
     "/sdk/getting-started"
   ],
-  "escrow": [
-    "/helpers/escrow"
+  "indexer": [
+    "/sdk/discovery-providers"
+  ],
+  "contract": [
+    "/sdk/discovery-providers"
+  ],
+  "rate limit": [
+    "/sdk/discovery-providers"
+  ],
+  "deep import": [
+    "/sdk/discovery-providers"
+  ],
+  "deposit": [
+    "/sdk/deposit-transfer-surplus",
+    "/sdk/deposit"
+  ],
+  "approve": [
+    "/sdk/deposit"
+  ],
+  "note": [
+    "/sdk/deposit",
+    "/notes-and-nullifiers"
+  ],
+  "get started": [
+    "/overview"
+  ],
+  "privacy stack": [
+    "/overview",
+    "/builder-privacy-overview"
+  ],
+  "helper contracts": [
+    "/overview",
+    "/builder-privacy-overview"
+  ],
+  "privacy sdk": [
+    "/overview"
+  ],
+  "nullifier": [
+    "/notes-and-nullifiers"
+  ],
+  "utxo": [
+    "/notes-and-nullifiers"
+  ],
+  "open note": [
+    "/notes-and-nullifiers"
+  ],
+  "double-spend": [
+    "/notes-and-nullifiers"
+  ],
+  "poseidon": [
+    "/notes-and-nullifiers"
+  ],
+  "vesu": [
+    "/helpers/vesu-lending-helper"
+  ],
+  "lending": [
+    "/helpers/vesu-lending-helper"
+  ],
+  "vault": [
+    "/helpers/vesu-lending-helper"
+  ],
+  "erc4626": [
+    "/helpers/vesu-lending-helper"
+  ],
+  "vtoken": [
+    "/helpers/vesu-lending-helper"
   ],
   "helper": [
+    "/helpers/vesu-lending-helper",
+    "/helpers/swap-helper",
+    "/helpers/privacy-invoke",
+    "/helpers/escrow"
+  ],
+  "yield": [
+    "/helpers/vesu-lending-helper"
+  ],
+  "swap": [
+    "/helpers/swap-helper"
+  ],
+  "amm": [
+    "/helpers/swap-helper"
+  ],
+  "dex": [
+    "/helpers/swap-helper"
+  ],
+  "balance delta": [
+    "/helpers/swap-helper"
+  ],
+  "privacy_invoke": [
+    "/helpers/swap-helper",
+    "/helpers/privacy-invoke",
+    "/helpers/escrow"
+  ],
+  "opennotedeposit": [
+    "/helpers/privacy-invoke"
+  ],
+  "anonymizing": [
+    "/helpers/privacy-invoke"
+  ],
+  "defi": [
+    "/helpers/privacy-invoke"
+  ],
+  "escrow": [
     "/helpers/escrow"
   ],
   "commitment": [
@@ -50,7 +357,58 @@
   "secret": [
     "/helpers/escrow"
   ],
-  "privacy_invoke": [
-    "/helpers/escrow"
+  "compliance": [
+    "/compliance"
+  ],
+  "selective disclosure": [
+    "/compliance"
+  ],
+  "tracing": [
+    "/compliance"
+  ],
+  "channel": [
+    "/channels-and-subchannels"
+  ],
+  "scanning": [
+    "/channels-and-subchannels"
+  ],
+  "note index": [
+    "/channels-and-subchannels"
+  ],
+  "channel key": [
+    "/channels-and-subchannels"
+  ],
+  "builder overview": [
+    "/builder-privacy-overview"
+  ],
+  "sub-accounts": [
+    "/builder-privacy-overview"
+  ],
+  "prover": [
+    "/builder-privacy-overview"
+  ],
+  "airdrop": [
+    "/app/anonymous-airdrop"
+  ],
+  "anonymous airdrop": [
+    "/app/anonymous-airdrop"
+  ],
+  "actions": [
+    "/actions-and-proofs"
+  ],
+  "phases": [
+    "/actions-and-proofs"
+  ],
+  "balance invariant": [
+    "/actions-and-proofs"
+  ],
+  "stwo": [
+    "/actions-and-proofs"
+  ],
+  "proof": [
+    "/actions-and-proofs"
+  ],
+  "virtual execution": [
+    "/actions-and-proofs"
   ]
 }

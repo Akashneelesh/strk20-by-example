@@ -4,6 +4,7 @@ export const title = "What is STRK20?"
 export const description =
   "An introduction to Starknet Privacy - confidential token transfers on a public chain"
 export const githubLink = ""
+export const githubLabel = ""
 
 export const keywords = [
   "strk20",
@@ -16,28 +17,49 @@ export const keywords = [
 
 export const codes = []
 
-const html = `<p>Starknet Privacy (STRK20) is a protocol for <strong>confidential ERC-20 transfers on Starknet</strong>.
-Sender, receiver and amounts are hidden from outside observers, while validity is
-enforced by client-side zero-knowledge proofs.</p>
-<p>Funds move through a <strong>privacy pool</strong> — a smart contract that holds pooled ERC-20
-tokens and tracks ownership with encrypted, UTXO-style records called <strong>notes</strong>.</p>
+const html = `<p>The foundation for all privacy on Starknet: the layer everything above reads from
+and writes to. STRK20 brings shielded balances, private transfers, and private
+DeFi to any ERC-20 on Starknet, built on the wallets and liquidity that already
+exist rather than a separate ecosystem.</p>
+<h3>How it works at a high level</h3>
+<ul>
+<li><strong>Note-based pool: not a mixer.</strong> Shielding deposits an ERC-20 into the pool,
+where the balance is held as an encrypted note (a UTXO). Private transfers
+spend existing notes and generate new ones.</li>
+<li><strong>Registration first:</strong> An account must register in the pool (set a viewing key)
+before it can hold or receive private balances; both sender and recipient must
+be registered before private transfers between them. Wallets handle registration
+on first use, and channel setup between counterparties is automatic after that.</li>
+<li><strong>Onchain proof verification:</strong> Every private transaction carries a
+zero-knowledge (STARK) proof confirming the spent notes exist, belong to the
+spender, haven&#39;t been double-spent, and that value is conserved. Starknet
+verifies the proof in-protocol before updating the pool&#39;s state.</li>
+<li><strong>Hidden vs. visible:</strong> Inside the pool, the sender, receiver, amounts, token
+type, and which notes were spent are all private. What stays visible: deposit
+and withdrawal amounts (the public ERC-20 legs), that someone is interacting
+with the pool, and timing. A Paymaster can decouple the submitter&#39;s address
+from the transaction.</li>
+<li><strong>Shielding:</strong> Users shield assets when they want privacy and unshield them when
+transparency is required, moving value between public and confidential states on
+the same underlying token.</li>
+</ul>
 <h2>The lifecycle: public → private → public</h2>
 <ol>
-<li><strong>Deposit</strong> — move public ERC-20 tokens into the pool. The deposit itself is
+<li><strong>Deposit</strong> - move public ERC-20 tokens into the pool. The deposit itself is
 visible on-chain (depositor and amount), but the resulting note is encrypted.</li>
-<li><strong>Private transfers</strong> — transfer value inside the pool by spending notes and
+<li><strong>Private transfers</strong> - transfer value inside the pool by spending notes and
 creating new ones. Nobody watching the chain can tell who paid whom, or how much.</li>
-<li><strong>Withdraw</strong> — move tokens back out of the pool to a public address.</li>
+<li><strong>Withdraw</strong> - move tokens back out of the pool to a public address.</li>
 </ol>
 <h2>What makes it different</h2>
 <ul>
-<li><strong>Native to Starknet</strong> — no separate chain or bridge. It runs as a contract on
+<li><strong>Native to Starknet</strong> - no separate chain or bridge. It runs as a contract on
 Starknet and composes with existing accounts and DeFi.</li>
-<li><strong>Variable amounts, reusable notes</strong> — unlike fixed-denomination mixers, notes
+<li><strong>Variable amounts, reusable notes</strong> - unlike fixed-denomination mixers, notes
 carry arbitrary amounts and change is handled automatically.</li>
-<li><strong>Scalable discovery</strong> — recipients find their incoming funds by scanning only
+<li><strong>Scalable discovery</strong> - recipients find their incoming funds by scanning only
 their own channels, so cost scales with your activity, not total pool volume.</li>
-<li><strong>Built-in compliance</strong> — at registration every user encrypts their private
+<li><strong>Built-in compliance</strong> - at registration every user encrypts their private
 viewing key to an auditor&#39;s public key, enabling selective disclosure under
 lawful process while preserving everyone else&#39;s privacy.</li>
 </ul>
@@ -70,15 +92,17 @@ lawful process while preserving everyone else&#39;s privacy.</li>
 <td>Small adapter that lets pool funds interact with external DeFi</td>
 </tr>
 </tbody></table>
-<p>Each of these has its own page in the Concepts section — read them in order and
+<p>Each of these has its own page in the Concepts section - read them in order and
 you will have the full mental model.</p>
 <h2>Who this site is for</h2>
 <ul>
-<li><strong>App developers</strong> integrating private transfers with the TypeScript SDK — see
-the SDK section.</li>
-<li><strong>Cairo developers</strong> writing helper contracts (escrow, swaps, lending) that the
-pool invokes atomically — see the Helper Contracts section.</li>
-<li><strong>Anyone</strong> who wants to understand how private payments work on Starknet — start
+<li><strong>Private dapp developers</strong> integrating with existing wallets - see the
+Starknet Wallet API section.</li>
+<li><strong>Core dapp builders</strong> writing private DeFi integrations - see the Helper
+Contracts section.</li>
+<li><strong>Wallet builders</strong> implementing privacy flows directly - see Build Privacy
+Wallets.</li>
+<li><strong>Anyone</strong> who wants to understand how private payments work on Starknet - start
 with the Concepts pages.</li>
 </ul>
 `

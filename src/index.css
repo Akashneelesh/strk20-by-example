@@ -35,7 +35,10 @@ body.light {
   --code-bg: #f5f5f5;
   --link-color: #261a3b;
   --input-bg: #f1f1f1;
-  --link-active-color: #00ff0054;
+  --link-active-color: rgba(0, 0, 0, 0.06);
+  --table-border-color: #d0d7de;
+  --table-header-bg: #f6f8fa;
+  --table-row-alt-bg: #f8fafc;
 }
 body.dark {
   --bg-color: #161b22;
@@ -45,7 +48,10 @@ body.dark {
   --code-bg: #0d1117;
   --link-color: #f6f6f6;
   --input-bg: white;
-  --link-active-color: #00ff0054;
+  --link-active-color: rgba(255, 255, 255, 0.08);
+  --table-border-color: #30363d;
+  --table-header-bg: #21262d;
+  --table-row-alt-bg: #1c2128;
 }
 pre {
   padding: 15px;
@@ -73,13 +79,13 @@ pre .buttons button:hover {
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-  color: rgb(231, 76, 60);
+  color: inherit;
 }
 .language-solidity,
 .language-cairo,
 .language-typescript {
   display: block;
-  color: var(--color);
+  color: inherit;
 }
 a,
 a:visited {
@@ -93,103 +99,113 @@ em {
   font-style: italic;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 28px 0;
+  table-layout: auto;
+}
+
+th,
+td {
+  border: 1px solid var(--table-border-color);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--table-header-bg);
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background-color: var(--table-row-alt-bg);
+}
+
 pre {
   background-color: var(--code-bg);
 }
 
-/* code */
-
-/* foundation */
+/* Code highlighting. Cairo is highlighted through the Rust grammar; keep the
+   base text neutral so snippets do not render as a wall of red. */
 body.light .hljs {
-  background: #eee;
-  color: black;
+  background: var(--code-bg);
+  color: #24292f;
 }
 
-body.light .hljs-link,
-body.light .hljs-emphasis,
+body.light .hljs-keyword,
+body.light .hljs-selector-tag,
+body.light .hljs-meta .hljs-keyword,
+body.light .hljs-doctag,
+body.light .hljs-template-tag {
+  color: #cf222e;
+}
+
+body.light .hljs-title,
+body.light .hljs-title.function_,
+body.light .hljs-title.class_,
+body.light .hljs-section {
+  color: #8250df;
+}
+
+body.light .hljs-type,
+body.light .hljs-built_in,
+body.light .hljs-name,
+body.light .hljs-tag {
+  color: #953800;
+}
+
+body.light .hljs-attr,
 body.light .hljs-attribute,
-body.light .hljs-addition {
-  color: #070;
+body.light .hljs-variable,
+body.light .hljs-template-variable,
+body.light .hljs-params,
+body.light .hljs-property {
+  color: #0550ae;
+}
+
+body.light .hljs-string,
+body.light .hljs-regexp,
+body.light .hljs-symbol,
+body.light .hljs-meta .hljs-string {
+  color: #0a3069;
+}
+
+body.light .hljs-number,
+body.light .hljs-literal,
+body.light .hljs-bullet,
+body.light .hljs-operator {
+  color: #116329;
+}
+
+body.light .hljs-comment,
+body.light .hljs-quote,
+body.light .hljs-code,
+body.light .hljs-formula {
+  color: #6e7781;
+  font-style: italic;
 }
 
 body.light .hljs-emphasis {
+  color: #24292f;
   font-style: italic;
-}
-
-body.light .hljs-strong,
-body.light .hljs-string,
-body.light .hljs-deletion {
-  color: #d14;
 }
 
 body.light .hljs-strong {
+  color: #24292f;
   font-weight: bold;
 }
 
-body.light .hljs-quote,
-body.light .hljs-comment {
-  color: #5f5f55;
-  font-style: italic;
+body.light .hljs-addition {
+  color: #116329;
+  background-color: #dafbe1;
 }
 
-body.light .hljs-section,
-body.light .hljs-title {
-  color: #900;
+body.light .hljs-deletion {
+  color: #82071e;
+  background-color: #ffebe9;
 }
-
-body.light .hljs-class .hljs-title,
-body.light .hljs-title.class_,
-body.light .hljs-type {
-  color: #458;
-}
-
-body.light .hljs-variable,
-body.light .hljs-template-variable {
-  color: #336699;
-}
-
-body.light .hljs-bullet {
-  color: #997700;
-}
-
-body.light .hljs-meta {
-  color: #3344bb;
-}
-
-body.light .hljs-code,
-body.light .hljs-number,
-body.light .hljs-literal,
-body.light .hljs-keyword,
-body.light .hljs-selector-tag {
-  color: #0758fc;
-}
-
-body.light .hljs-regexp {
-  background-color: #fff0ff;
-  color: #880088;
-}
-
-body.light .hljs-symbol {
-  color: #990073;
-}
-
-body.light .hljs-tag,
-body.light .hljs-name,
-body.light .hljs-selector-id,
-body.light .hljs-selector-class {
-  color: #007700;
-}
-
-/*!
-  Theme: GitHub Dark
-  Description: Dark theme as seen on github.com
-  Author: github.com
-  Maintainer: @Hirse
-  Updated: 2021-05-15
-
-  Outdated base version: https://github.com/primer/github-syntax-dark
-  Current colors taken from GitHub's CSS
-*/
 
 body.dark .hljs {
   color: #c9d1d9;
@@ -200,9 +216,7 @@ body.dark .hljs-doctag,
 body.dark .hljs-keyword,
 body.dark .hljs-meta .hljs-keyword,
 body.dark .hljs-template-tag,
-body.dark .hljs-template-variable,
-body.dark .hljs-type,
-body.dark .hljs-variable.language_ {
+body.dark .hljs-template-variable {
   color: #ff7b72;
 }
 
@@ -233,7 +247,8 @@ body.dark .hljs-meta .hljs-string {
 }
 
 body.dark .hljs-built_in,
-body.dark .hljs-symbol {
+body.dark .hljs-symbol,
+body.dark .hljs-type {
   color: #ffa657;
 }
 
@@ -241,6 +256,7 @@ body.dark .hljs-comment,
 body.dark .hljs-code,
 body.dark .hljs-formula {
   color: #8b949e;
+  font-style: italic;
 }
 
 body.dark .hljs-name,
@@ -250,7 +266,11 @@ body.dark .hljs-selector-pseudo {
   color: #7ee787;
 }
 
-body.dark .hljs-subst {
+body.dark .hljs-subst,
+body.dark .hljs-punctuation,
+body.dark .hljs-params,
+body.dark .hljs-property,
+body.dark .hljs-tag {
   color: #c9d1d9;
 }
 
@@ -281,14 +301,6 @@ body.dark .hljs-addition {
 body.dark .hljs-deletion {
   color: #ffdcd7;
   background-color: #67060c;
-}
-
-body.dark .hljs-char.escape_,
-body.dark .hljs-link,
-body.dark .hljs-params,
-body.dark .hljs-property,
-body.dark .hljs-punctuation,
-body.dark .hljs-tag {
 }
 
 /* copy */
