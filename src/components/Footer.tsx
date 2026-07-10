@@ -12,6 +12,14 @@ function Footer() {
         >
           Starknet Privacy docs
         </a>
+        <div className={styles.bar}>|</div>
+        <a
+          href="https://starkscan.co/privacy-pool"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy Pool explorer
+        </a>
       </div>
       <div className={styles.row}>
         <a
