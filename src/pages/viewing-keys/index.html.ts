@@ -77,7 +77,7 @@ while everyone else&#39;s data stays private. See
 salt. This is deliberate: when a DeFi interaction (say, an AMM swap) produces
 an output amount that is only known at execution time, the client cannot mask
 it in advance - the mask is part of the proven transaction, but the amount
-isn&#39;t decided until the helper contract runs on-chain. Open notes trade amount
+isn&#39;t decided until the anonymizer contract runs on-chain. Open notes trade amount
 privacy for that late binding; ownership and subsequent spends remain private.</p>
 <h2>Rule of thumb</h2>
 <ul>

@@ -46,7 +46,7 @@ the
 <ul>
 <li><a href="/starknet-wallet-api/overview">Starknet Wallet API overview</a></li>
 <li><a href="/starknet-wallet-api/starknet-js">starknet.js</a></li>
-<li><a href="/helpers/privacy-invoke">Helper Contract Anatomy</a></li>
+<li><a href="/helpers/privacy-invoke">Anonymizer Contract Anatomy</a></li>
 </ul>
 `
 

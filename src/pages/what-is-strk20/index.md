@@ -48,19 +48,21 @@ exist rather than a separate ecosystem.
   carry arbitrary amounts and change is handled automatically.
 - **Scalable discovery** - recipients find their incoming funds by scanning only
   their own channels, so cost scales with your activity, not total pool volume.
-- **Built-in compliance** - at registration every user encrypts their private
-  viewing key to an auditor's public key, enabling selective disclosure under
-  lawful process while preserving everyone else's privacy.
+- **Selective disclosure** - at registration every user encrypts their private
+  viewing key to an auditor's public key, so the system can disclose the
+  information needed to respond to a legitimate regulatory request without
+  exposing unrelated users.
 
 ## The building blocks
 
-| Concept         | What it is                                                           |
-| --------------- | -------------------------------------------------------------------- |
-| Note            | Immutable record of ownership of an amount of a token                |
-| Nullifier       | One-time value revealed when spending a note (prevents double-spend) |
-| Viewing key     | Keypair used to encrypt/decrypt note data and derive nullifiers      |
-| Channel         | Unidirectional sender → recipient lane where notes are stored        |
-| Helper contract | Small adapter that lets pool funds interact with external DeFi       |
+| Concept             | What it is                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| Note                | Immutable record of ownership of an amount of a token                                |
+| Nullifier           | One-time value revealed when spending a note (prevents double-spend)                 |
+| Viewing key         | Keypair used to encrypt/decrypt note data and derive nullifiers                      |
+| Channel             | Unidirectional sender → recipient lane where notes are stored                        |
+| Anonymizer contract | Small adapter that lets pool funds interact with external DeFi                       |
+| Deposit screening   | Every deposit is screened and signed by FPI; the pool verifies the signature onchain |
 
 Each of these has its own page in the Concepts section - read them in order and
 you will have the full mental model.
@@ -69,8 +71,8 @@ you will have the full mental model.
 
 - **Private dapp developers** integrating with existing wallets - see the
   Starknet Wallet API section.
-- **Core dapp builders** writing private DeFi integrations - see the Helper
-  Contracts section.
+- **Core dapp builders** writing private DeFi integrations - see the
+  Anonymizer Contracts section.
 - **Wallet builders** implementing privacy flows directly - see Build Privacy
   Wallets.
 - **Anyone** who wants to understand how private payments work on Starknet - start

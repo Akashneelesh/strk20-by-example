@@ -61,9 +61,9 @@ To find your incoming funds, given only your private viewing key:
    first empty slot, unmasking amounts and checking each note's nullifier
    against the on-chain nullifier set to skip spent ones.
 
-What is left is your spendable private balance. A stateless discovery service
-can run this scan on your behalf - you send the viewing key per request, it
-scans storage via RPC and returns decrypted notes without storing anything.
+What is left is your spendable private balance. A discovery service can run
+this scan on your behalf; see the SDK docs for how viewing-key material is
+handled in that flow.
 
 ## Why this scales
 

@@ -39,7 +39,7 @@ be filled in _after_ proof generation:
 - token address is stored in the clear
 
 Open notes exist for DeFi: a swap's output amount is only known at execution
-time, long after the client proved its transaction. A helper contract fills the
+time, long after the client proved its transaction. An anonymizer contract fills the
 open note with the actual output, which then becomes spendable private balance.
 
 ## Where a note lives

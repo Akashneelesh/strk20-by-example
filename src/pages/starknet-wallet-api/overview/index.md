@@ -26,7 +26,7 @@ submission.
 Use this route when you are building an app **on top of** existing privacy
 wallets. If you are building the wallet itself, use the
 [Build Privacy Wallets](/sdk/getting-started). If your app needs private DeFi,
-pair this route with a [Helper Contract](/helpers/privacy-invoke).
+pair this route with an [Anonymizer Contract](/helpers/privacy-invoke).
 
 ## Why most dapps want this route
 
@@ -43,7 +43,7 @@ pair this route with a [Helper Contract](/helpers/privacy-invoke).
 Your dapp talks to `starknet.js`, which reaches the user's privacy-enabled wallet
 through the Starknet Wallet API. The wallet runs the STRK20 SDK internally and
 settles against the privacy pool. For private DeFi, the same call path also triggers your app-specific
-[helper contract](/helpers/privacy-invoke).
+[anonymizer contract](/helpers/privacy-invoke).
 
 ## React hooks or direct WalletAccountV6?
 
@@ -71,7 +71,7 @@ Without writing any privacy cryptography, a dapp can ask the wallet to:
 - **Swap** - where the connected wallet supports it.
 
 Broader DeFi actions (lending, staking, custom flows) pair the Starknet Wallet
-API with an app-specific helper contract that the pool invokes atomically.
+API with an app-specific anonymizer contract that the pool invokes atomically.
 
 ## What to keep in mind
 
@@ -84,14 +84,14 @@ API with an app-specific helper contract that the pool invokes atomically.
 
 ## Choose your route
 
-| You are building...                                                                   | Start here                                                                      |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| A private dapp anywhere from private DeFi, private consumer apps, private games, etc. | [Helper Contracts](/helpers/privacy-invoke) and Starknet Wallet API (this page) |
-| A Starknet privacy wallet                                                             | [Build Privacy Wallets](/sdk/getting-started)                                   |
+| You are building...                                                                   | Start here                                                                          |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| A private dapp anywhere from private DeFi, private consumer apps, private games, etc. | [Anonymizer Contracts](/helpers/privacy-invoke) and Starknet Wallet API (this page) |
+| A Starknet privacy wallet                                                             | [Build Privacy Wallets](/sdk/getting-started)                                       |
 
 ## Read next
 
 - [starknet-start](/starknet-wallet-api/starknet-start-hook)
 - [starknet.js](/starknet-wallet-api/starknet-js)
-- [Helper Contract Anatomy](/helpers/privacy-invoke)
+- [Anonymizer Contract Anatomy](/helpers/privacy-invoke)
 - [Build Privacy Wallets](/sdk/getting-started)

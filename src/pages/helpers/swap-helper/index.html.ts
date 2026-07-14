@@ -2,7 +2,7 @@
 export const version = "0.14.2"
 export const title = "Swap Helper"
 export const description =
-  "A DEX swap helper contract - trade privately through any AMM using the balance-delta idiom"
+  "A DEX swap anonymizer contract - trade privately through any AMM using the balance-delta idiom"
 export const githubLink = ""
 export const githubLabel = ""
 

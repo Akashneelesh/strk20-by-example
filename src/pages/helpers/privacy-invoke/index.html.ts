@@ -1,6 +1,6 @@
 // metadata
 export const version = "0.14.2"
-export const title = "Helper Contract Anatomy"
+export const title = "Anonymizer Contract Anatomy"
 export const description =
   "The privacy_invoke pattern - how the pool calls external contracts and credits open notes"
 export const githubLink = ""
@@ -18,11 +18,11 @@ export const keywords = [
 export const codes = [
   {
     fileName: "EchoHelper.cairo",
-    code: "Ly8gQWRhcHRlZCBmcm9tIHN0YXJrbmV0LXByaXZhY3kgcGFja2FnZXMvcHJpdmFjeS9zcmMvdGVzdHMvbW9ja19pbnZva2VfcmV0dXJucy5jYWlybwovLyAoQXBhY2hlLTIuMCwgU3RhcmtXYXJlKS4gVGhlIHNtYWxsZXN0IHBvc3NpYmxlIGhlbHBlciBjb250cmFjdDogaXQgZWNob2VzIHRoZQovLyBkZXBvc2l0IGluc3RydWN0aW9ucyBpdCBpcyBnaXZlbiBiYWNrIHRvIHRoZSBwcml2YWN5IHBvb2wuCnVzZSBwcml2YWN5OjpvYmplY3RzOjpPcGVuTm90ZURlcG9zaXQ7CgojW3N0YXJrbmV0OjppbnRlcmZhY2VdCnB1YiB0cmFpdCBJRWNob0hlbHBlcjxUPiB7CiAgICAvLy8gVGhlIGVudHJ5IHBvaW50IGV2ZXJ5IGhlbHBlciBjb250cmFjdCBtdXN0IGV4cG9zZS4KICAgIC8vLyBUaGUgcHJpdmFjeSBwb29sIGNhbGxzIGl0IHZpYSB0aGUgYElOVk9LRV9TRUxFQ1RPUmAgZHVyaW5nIGBJbnZva2VFeHRlcm5hbGAuCiAgICAvLy8gQ2FsbGRhdGEgYWZ0ZXIgdGhlIHNlbGVjdG9yIGlzIGRlc2VyaWFsaXplZCBpbnRvIHRoaXMgZnVuY3Rpb24ncyBwYXJhbWV0ZXJzOwogICAgLy8vIHRoZSByZXR1cm4gdmFsdWUgdGVsbHMgdGhlIHBvb2wgd2hpY2ggb3BlbiBub3RlcyB0byBjcmVkaXQuCiAgICBmbiBwcml2YWN5X2ludm9rZShyZWYgc2VsZjogVCwgZGVwb3NpdHM6IFNwYW48T3Blbk5vdGVEZXBvc2l0PikgLT4gU3BhbjxPcGVuTm90ZURlcG9zaXQ+Owp9CgojW3N0YXJrbmV0Ojpjb250cmFjdF0KcHViIG1vZCBFY2hvSGVscGVyIHsKICAgIHVzZSBwcml2YWN5OjpvYmplY3RzOjpPcGVuTm90ZURlcG9zaXQ7CiAgICB1c2Ugc3VwZXI6OklFY2hvSGVscGVyOwoKICAgICNbc3RvcmFnZV0KICAgIHN0cnVjdCBTdG9yYWdlIHt9CgogICAgI1tjb25zdHJ1Y3Rvcl0KICAgIGZuIGNvbnN0cnVjdG9yKHJlZiBzZWxmOiBDb250cmFjdFN0YXRlKSB7fQoKICAgICNbYWJpKGVtYmVkX3YwKV0KICAgIHB1YiBpbXBsIEVjaG9IZWxwZXJJbXBsIG9mIElFY2hvSGVscGVyPENvbnRyYWN0U3RhdGU+IHsKICAgICAgICBmbiBwcml2YWN5X2ludm9rZSgKICAgICAgICAgICAgcmVmIHNlbGY6IENvbnRyYWN0U3RhdGUsIGRlcG9zaXRzOiBTcGFuPE9wZW5Ob3RlRGVwb3NpdD4sCiAgICAgICAgKSAtPiBTcGFuPE9wZW5Ob3RlRGVwb3NpdD4gewogICAgICAgICAgICBkZXBvc2l0cwogICAgICAgIH0KICAgIH0KfQo=",
+    code: "Ly8gQWRhcHRlZCBmcm9tIHN0YXJrbmV0LXByaXZhY3kgcGFja2FnZXMvcHJpdmFjeS9zcmMvdGVzdHMvbW9ja19pbnZva2VfcmV0dXJucy5jYWlybwovLyAoQXBhY2hlLTIuMCwgU3RhcmtXYXJlKS4gVGhlIHNtYWxsZXN0IHBvc3NpYmxlIGFub255bWl6ZXIgY29udHJhY3Q6IGl0IGVjaG9lcyB0aGUKLy8gZGVwb3NpdCBpbnN0cnVjdGlvbnMgaXQgaXMgZ2l2ZW4gYmFjayB0byB0aGUgcHJpdmFjeSBwb29sLgp1c2UgcHJpdmFjeTo6b2JqZWN0czo6T3Blbk5vdGVEZXBvc2l0OwoKI1tzdGFya25ldDo6aW50ZXJmYWNlXQpwdWIgdHJhaXQgSUVjaG9IZWxwZXI8VD4gewogICAgLy8vIFRoZSBlbnRyeSBwb2ludCBldmVyeSBhbm9ueW1pemVyIGNvbnRyYWN0IG11c3QgZXhwb3NlLgogICAgLy8vIFRoZSBwcml2YWN5IHBvb2wgY2FsbHMgaXQgdmlhIHRoZSBgSU5WT0tFX1NFTEVDVE9SYCBkdXJpbmcgYEludm9rZUV4dGVybmFsYC4KICAgIC8vLyBDYWxsZGF0YSBhZnRlciB0aGUgc2VsZWN0b3IgaXMgZGVzZXJpYWxpemVkIGludG8gdGhpcyBmdW5jdGlvbidzIHBhcmFtZXRlcnM7CiAgICAvLy8gdGhlIHJldHVybiB2YWx1ZSB0ZWxscyB0aGUgcG9vbCB3aGljaCBvcGVuIG5vdGVzIHRvIGNyZWRpdC4KICAgIGZuIHByaXZhY3lfaW52b2tlKHJlZiBzZWxmOiBULCBkZXBvc2l0czogU3BhbjxPcGVuTm90ZURlcG9zaXQ+KSAtPiBTcGFuPE9wZW5Ob3RlRGVwb3NpdD47Cn0KCiNbc3RhcmtuZXQ6OmNvbnRyYWN0XQpwdWIgbW9kIEVjaG9IZWxwZXIgewogICAgdXNlIHByaXZhY3k6Om9iamVjdHM6Ok9wZW5Ob3RlRGVwb3NpdDsKICAgIHVzZSBzdXBlcjo6SUVjaG9IZWxwZXI7CgogICAgI1tzdG9yYWdlXQogICAgc3RydWN0IFN0b3JhZ2Uge30KCiAgICAjW2NvbnN0cnVjdG9yXQogICAgZm4gY29uc3RydWN0b3IocmVmIHNlbGY6IENvbnRyYWN0U3RhdGUpIHt9CgogICAgI1thYmkoZW1iZWRfdjApXQogICAgcHViIGltcGwgRWNob0hlbHBlckltcGwgb2YgSUVjaG9IZWxwZXI8Q29udHJhY3RTdGF0ZT4gewogICAgICAgIGZuIHByaXZhY3lfaW52b2tlKAogICAgICAgICAgICByZWYgc2VsZjogQ29udHJhY3RTdGF0ZSwgZGVwb3NpdHM6IFNwYW48T3Blbk5vdGVEZXBvc2l0PiwKICAgICAgICApIC0+IFNwYW48T3Blbk5vdGVEZXBvc2l0PiB7CiAgICAgICAgICAgIGRlcG9zaXRzCiAgICAgICAgfQogICAgfQp9Cg==",
   },
 ]
 
-const html = `<p>Helper contracts (also called <strong>anonymizing contracts</strong>) are how private funds
+const html = `<p>Anonymizer contracts (also called <strong>helper contracts</strong>) are how private funds
 interact with the outside world - DEXs, lending vaults, escrows - without
 revealing who is behind the interaction.</p>
 <p>The pattern is a sandwich, executed atomically in one transaction:</p>
@@ -54,13 +54,13 @@ deserializes your return value as <code>Span&lt;OpenNoteDeposit&gt;</code>:</p>
 </code></pre><p>Here is the smallest possible helper - it simply echoes the deposit instructions
 it is given back to the pool:</p>
 <pre><code class="language-cairo"><span class="hljs-comment">// Adapted from starknet-privacy packages/privacy/src/tests/mock_invoke_returns.cairo</span>
-<span class="hljs-comment">// (Apache-2.0, StarkWare). The smallest possible helper contract: it echoes the</span>
+<span class="hljs-comment">// (Apache-2.0, StarkWare). The smallest possible anonymizer contract: it echoes the</span>
 <span class="hljs-comment">// deposit instructions it is given back to the privacy pool.</span>
 <span class="hljs-keyword">use</span> privacy::objects::OpenNoteDeposit;
 
 <span class="hljs-meta">#[starknet::interface]</span>
 <span class="hljs-keyword">pub</span> <span class="hljs-keyword">trait</span> <span class="hljs-title class_">IEchoHelper</span>&lt;T&gt; {
-    <span class="hljs-comment">/// The entry point every helper contract must expose.</span>
+    <span class="hljs-comment">/// The entry point every anonymizer contract must expose.</span>
     <span class="hljs-comment">/// The privacy pool calls it via the \`INVOKE_SELECTOR\` during \`InvokeExternal\`.</span>
     <span class="hljs-comment">/// Calldata after the selector is deserialized into this function&#x27;s parameters;</span>
     <span class="hljs-comment">/// the return value tells the pool which open notes to credit.</span>

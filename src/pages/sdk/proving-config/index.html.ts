@@ -66,7 +66,16 @@ a revert, <code>INVALID_NONCE</code>, <code>Replacement transaction underpriced<
 is stale, and retrying loops on proofs the chain keeps rejecting:</p>
 <pre><code class="language-typescript">transfers.<span class="hljs-title function_">invalidateProofNonceCache</span>()
 <span class="hljs-comment">// ...then rebuild and resubmit</span>
-</code></pre><h2>Common failures</h2>
+</code></pre><h2>Deposits are screened on every proving route</h2>
+<p>A custom or self-hosted proving backend can prove every pool action, but a
+deposit is only accepted with a screening signature: FPI screens the
+depositing address and signs the deposit, and the pool verifies that
+signature onchain. Self-hosting is not a route around screening.</p>
+<p>Teams running their own prover typically shield through a privacy-enabled
+wallet (Ready or Xverse) and then transfer privately to the account their
+integration controls. If your production flow needs direct deposits, raise it
+in the <a href="https://t.me/sncorestars">Cairo CoreStars Telegram</a>.</p>
+<h2>Common failures</h2>
 <table>
 <thead>
 <tr>

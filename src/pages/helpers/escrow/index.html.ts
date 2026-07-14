@@ -2,7 +2,7 @@
 export const version = "0.14.2"
 export const title = "Escrow"
 export const description =
-  "A deferred-delivery escrow helper contract - send privately to someone who has not registered yet"
+  "A deferred-delivery escrow anonymizer contract - send privately to someone who has not registered yet"
 export const githubLink = ""
 export const githubLabel = ""
 

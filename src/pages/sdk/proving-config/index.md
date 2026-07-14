@@ -74,6 +74,18 @@ transfers.invalidateProofNonceCache()
 // ...then rebuild and resubmit
 ```
 
+## Deposits are screened on every proving route
+
+A custom or self-hosted proving backend can prove every pool action, but a
+deposit is only accepted with a screening signature: FPI screens the
+depositing address and signs the deposit, and the pool verifies that
+signature onchain. Self-hosting is not a route around screening.
+
+Teams running their own prover typically shield through a privacy-enabled
+wallet (Ready or Xverse) and then transfer privately to the account their
+integration controls. If your production flow needs direct deposits, raise it
+in the [Cairo CoreStars Telegram](https://t.me/sncorestars).
+
 ## Common failures
 
 | Symptom                             | Cause                           | Fix                                 |

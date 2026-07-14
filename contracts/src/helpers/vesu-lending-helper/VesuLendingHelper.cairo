@@ -52,7 +52,7 @@ pub mod errors {
     pub const ZERO_OUT_AMOUNT: felt252 = 'ZERO_OUT_AMOUNT';
 }
 
-/// Vesu lending helper contract that performs Vesu deposit/withdraw on behalf of the privacy
+/// Vesu lending anonymizer contract that performs Vesu deposit/withdraw on behalf of the privacy
 /// contract.
 #[starknet::contract]
 pub mod VesuLendingHelper {

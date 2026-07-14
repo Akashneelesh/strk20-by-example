@@ -140,7 +140,7 @@
     "strk20",
     "privacy stack",
     "wallet api",
-    "helper contracts",
+    "anonymizer contracts",
     "privacy sdk"
   ],
   "/notes-and-nullifiers": [
@@ -206,7 +206,7 @@
     "wallet api",
     "build privacy wallets",
     "privacy wallet sdk",
-    "helper contracts",
+    "anonymizer contracts",
     "sub-accounts",
     "prover",
     "strk20"

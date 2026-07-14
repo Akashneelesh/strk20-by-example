@@ -1,7 +1,7 @@
 ---
 title: Builder Privacy Overview
 version: 0.14.2
-description: "Choose the right STRK20 integration path: Starknet Wallet API, helper contracts, building privacy wallets, sub-accounts, or prover infrastructure."
+description: "Choose the right STRK20 integration path: Starknet Wallet API, anonymizer contracts, building privacy wallets, sub-accounts, or prover infrastructure."
 keywords:
   [
     builder overview,
@@ -10,7 +10,7 @@ keywords:
     wallet api,
     build privacy wallets,
     privacy wallet sdk,
-    helper contracts,
+    anonymizer contracts,
     sub-accounts,
     prover,
     strk20,
@@ -23,12 +23,12 @@ lower-level route when your product needs more control.
 
 ## Quick decision guide
 
-| If you want to...                                                                           | Use...                                                                                               | Why                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Build a private dapp anywhere from private DeFi, private consumer apps, private games, etc. | [Helper contracts](/helpers/privacy-invoke) and [Starknet Wallet API](/starknet-wallet-api/overview) | The wallet manages viewing keys, notes, proving, and submission; for DeFi, the pool calls your `privacy_invoke` adapter atomically, then credits the result back into private notes. |
-| Build a privacy wallet on Starknet                                                          | [Build Privacy Wallets](/sdk/getting-started)                                                        | Direct access to registration, channels, note discovery, transaction building, and proving configuration.                                                                            |
-| Operate proving infrastructure yourself                                                     | Prover backend                                                                                       | For wallets and infrastructure teams that need control over proof generation.                                                                                                        |
-| Hide the link between a user's main wallet and app activity                                 | Private sub-accounts (coming soon)                                                                   | Advanced account-based privacy route; verify wallet and API support before relying on it.                                                                                            |
+| If you want to...                                                                           | Use...                                                                                                   | Why                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Build a private dapp anywhere from private DeFi, private consumer apps, private games, etc. | [Anonymizer contracts](/helpers/privacy-invoke) and [Starknet Wallet API](/starknet-wallet-api/overview) | The wallet manages viewing keys, notes, proving, and submission; for DeFi, the pool calls your `privacy_invoke` adapter atomically, then credits the result back into private notes. |
+| Build a privacy wallet on Starknet                                                          | [Build Privacy Wallets](/sdk/getting-started)                                                            | Direct access to registration, channels, note discovery, transaction building, and proving configuration.                                                                            |
+| Operate proving infrastructure yourself                                                     | Prover backend                                                                                           | For wallets and infrastructure teams that need control over proof generation.                                                                                                        |
+| Hide the link between a user's main wallet and app activity                                 | Private sub-accounts (coming soon)                                                                       | Advanced account-based privacy route; verify wallet and API support before relying on it.                                                                                            |
 
 ## Core surfaces
 
@@ -47,14 +47,14 @@ state, proofs, and submission. A normal dapp should not receive the user's
 viewing key or manage note discovery directly. See the
 [Starknet Wallet API overview](/starknet-wallet-api/overview).
 
-### Helper contracts
+### Anonymizer contracts
 
-Helper contracts, also called anonymizing contracts, are app-specific Cairo
+Anonymizer contracts, also called helper contracts, are app-specific Cairo
 adapters for private DeFi. The pool withdraws tokens to the helper, calls its
 `privacy_invoke` entry point, and the helper returns `OpenNoteDeposit`
 instructions for whatever should be credited back into private notes. This is the
 focus for **core builders shipping private dapps**. See
-[Helper Contract Anatomy](/helpers/privacy-invoke).
+[Anonymizer Contract Anatomy](/helpers/privacy-invoke).
 
 ### Build Privacy Wallets
 
@@ -75,14 +75,18 @@ around it.
 
 Most dapps do not need to operate proving infrastructure. Wallets,
 infrastructure teams, and advanced integrators may run their own prover when
-they need operational control over proof generation.
+they need operational control over proof generation. Deposit screening applies
+regardless of proving route: FPI screens shielding addresses and signs each
+deposit, and the pool verifies the signature onchain, so a self-hosted prover
+meets the same deposit-screening requirement as hosted services.
 
 ## Builder rules of thumb
 
 - Use the Starknet Wallet API first for user-facing private dapps.
 - Use Build Privacy Wallets when you are building the wallet itself or need low-level SDK control.
 - Do not ask a normal dapp user for their viewing key.
-- For private DeFi integrations, expect both a Starknet Wallet API flow and an app-specific helper contract.
+- For private DeFi integrations, expect both a Starknet Wallet API flow and an app-specific anonymizer contract.
+- Deposits are screened on every route - self-hosted proving does not bypass onchain screening.
 - Be explicit about what remains public: deposits, withdrawals, timing, and some app-side activity may still be visible.
 - Verify wallet support, API versions, contract addresses, and compliance assumptions before launch.
 
@@ -90,5 +94,5 @@ they need operational control over proof generation.
 
 - [What is STRK20?](/what-is-strk20)
 - [Starknet Wallet API](/starknet-wallet-api/overview)
-- [Helper Contract Anatomy](/helpers/privacy-invoke)
+- [Anonymizer Contract Anatomy](/helpers/privacy-invoke)
 - [Build Privacy Wallets](/sdk/getting-started)

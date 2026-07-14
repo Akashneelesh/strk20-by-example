@@ -8,8 +8,10 @@ keywords: [vesu, lending, vault, erc4626, vtoken, helper, yield]
 The Vesu lending helper connects the privacy pool to
 [Vesu](https://vesu.xyz), a permissionless lending protocol whose pools are
 ERC-4626 / SNIP-22 tokenized vaults: deposit underlying assets, receive vToken
-shares; withdraw by burning shares. This is the reference helper contract used in
-the official Starknet Privacy docs.
+shares; withdraw by burning shares. This is the reference anonymizer contract used in
+the official Starknet Privacy docs. It is a reference example: review and
+adoption of the Vesu route remain with the app team, and the integration is
+in progress.
 
 Two operations, one entry point:
 

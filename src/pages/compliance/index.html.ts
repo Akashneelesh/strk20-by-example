@@ -16,14 +16,25 @@ export const keywords = [
 
 export const codes = []
 
-const html = `<p>STRK20 is private from the public, not from lawful oversight. The mechanism is
-a single ciphertext created at registration.</p>
+const html = `<p>STRK20 is private from the public, not from lawful oversight. Compliance rests
+on two mechanisms: every deposit is screened before it enters the pool, and
+selective disclosure is available after the fact through a single ciphertext
+created at registration.</p>
+<h2>Onchain deposit screening</h2>
+<p>Every deposit into the pool is screened. FPI (the screening provider) screens
+the address that shields tokens and signs every deposit; the pool verifies
+FPI&#39;s signature onchain before accepting the deposit. Since the v0.14.3
+upgrade this enforcement lives in the protocol itself, so it applies on every
+route into the pool - wallet flows, SDK integrations, and self-hosted provers
+alike. Running your own prover is not a way around screening: any other pool
+action can be proven with any prover, but a deposit without a valid screening
+signature is rejected onchain.</p>
 <h2>The escrowed viewing key</h2>
 <p>When a user registers (<code>SetViewingKey</code>), their <strong>private viewing key is
 encrypted to the auditor&#39;s public key</strong> - using the same ephemeral ECDH scheme
 as channels - and stored on-chain. The auditor&#39;s public key is set by
-governance, and can be a <strong>threshold key</strong>, so no single party can decrypt
-unilaterally.</p>
+governance, and the scheme supports <strong>threshold keys</strong>, so decryption need
+not rest with a single party.</p>
 <p>Disclosure is <strong>selective</strong>: the auditor decrypts only the viewing keys of
 users subject to a lawful request. Everyone else&#39;s transaction graph stays
 encrypted - there is no bulk-surveillance mode.</p>

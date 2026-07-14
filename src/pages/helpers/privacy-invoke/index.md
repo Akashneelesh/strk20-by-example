@@ -1,11 +1,11 @@
 ---
-title: Helper Contract Anatomy
+title: Anonymizer Contract Anatomy
 version: 0.14.2
 description: The privacy_invoke pattern - how the pool calls external contracts and credits open notes
 keywords: [privacy_invoke, helper, invoke, opennotedeposit, anonymizing, defi]
 ---
 
-Helper contracts (also called **anonymizing contracts**) are how private funds
+Anonymizer contracts (also called **helper contracts**) are how private funds
 interact with the outside world - DEXs, lending vaults, escrows - without
 revealing who is behind the interaction.
 

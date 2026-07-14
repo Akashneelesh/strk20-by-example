@@ -49,4 +49,4 @@ state, ZK proof, and signature wallet-side.
 
 - [Starknet Wallet API overview](/starknet-wallet-api/overview)
 - [starknet.js](/starknet-wallet-api/starknet-js)
-- [Helper Contract Anatomy](/helpers/privacy-invoke)
+- [Anonymizer Contract Anatomy](/helpers/privacy-invoke)

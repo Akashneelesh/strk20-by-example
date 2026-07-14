@@ -59,9 +59,10 @@ Starknet and composes with existing accounts and DeFi.</li>
 carry arbitrary amounts and change is handled automatically.</li>
 <li><strong>Scalable discovery</strong> - recipients find their incoming funds by scanning only
 their own channels, so cost scales with your activity, not total pool volume.</li>
-<li><strong>Built-in compliance</strong> - at registration every user encrypts their private
-viewing key to an auditor&#39;s public key, enabling selective disclosure under
-lawful process while preserving everyone else&#39;s privacy.</li>
+<li><strong>Selective disclosure</strong> - at registration every user encrypts their private
+viewing key to an auditor&#39;s public key, so the system can disclose the
+information needed to respond to a legitimate regulatory request without
+exposing unrelated users.</li>
 </ul>
 <h2>The building blocks</h2>
 <table>
@@ -88,8 +89,12 @@ lawful process while preserving everyone else&#39;s privacy.</li>
 <td>Unidirectional sender → recipient lane where notes are stored</td>
 </tr>
 <tr>
-<td>Helper contract</td>
+<td>Anonymizer contract</td>
 <td>Small adapter that lets pool funds interact with external DeFi</td>
+</tr>
+<tr>
+<td>Deposit screening</td>
+<td>Every deposit is screened and signed by FPI; the pool verifies the signature onchain</td>
 </tr>
 </tbody></table>
 <p>Each of these has its own page in the Concepts section - read them in order and
@@ -98,8 +103,8 @@ you will have the full mental model.</p>
 <ul>
 <li><strong>Private dapp developers</strong> integrating with existing wallets - see the
 Starknet Wallet API section.</li>
-<li><strong>Core dapp builders</strong> writing private DeFi integrations - see the Helper
-Contracts section.</li>
+<li><strong>Core dapp builders</strong> writing private DeFi integrations - see the
+Anonymizer Contracts section.</li>
 <li><strong>Wallet builders</strong> implementing privacy flows directly - see Build Privacy
 Wallets.</li>
 <li><strong>Anyone</strong> who wants to understand how private payments work on Starknet - start

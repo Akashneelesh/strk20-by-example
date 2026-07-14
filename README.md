@@ -1,7 +1,7 @@
 # STRK20 by Example
 
 Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and
-nullifiers, viewing keys, the Starknet Wallet API, Cairo helper contracts, and wallet-builder SDK flows.
+nullifiers, viewing keys, the Starknet Wallet API, Cairo anonymizer contracts, and wallet-builder SDK flows.
 
 Built in the mold of [Solidity by Example](https://solidity-by-example.org)
 (forked architecture, MIT licensed). Content is sourced from the

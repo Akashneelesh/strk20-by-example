@@ -114,7 +114,7 @@ export default function HomePage() {
     <div className={styles.component}>
       <SEO
         title="STRK20 by Example"
-        description="Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and nullifiers, viewing keys, the Starknet Wallet API, helper contracts, and wallet-builder SDK flows"
+        description="Learn Starknet Privacy (STRK20) with simple examples - privacy pools, notes and nullifiers, viewing keys, the Starknet Wallet API, anonymizer contracts, and wallet-builder SDK flows"
       />
       <div className={styles.hero}>
         <h1 className={styles.header}>
@@ -130,7 +130,7 @@ export default function HomePage() {
             Starknet Privacy
           </a>{" "}
           with simple examples: private transfers on a public chain, the Starknet Wallet
-          API, Cairo helper contracts, and wallet-builder SDK flows.
+          API, Cairo anonymizer contracts, and wallet-builder SDK flows.
         </p>
 
         <div className={styles.updates}>

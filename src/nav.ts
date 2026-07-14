@@ -113,7 +113,7 @@ export const BUILD_PRIVACY_WALLET_ROUTES: Route[] = [
 export const HELPER_ROUTES: Route[] = [
   {
     path: "privacy-invoke",
-    title: "Helper Contract Anatomy",
+    title: "Anonymizer Contract Anatomy",
   },
   {
     path: "swap-helper",
@@ -158,7 +158,7 @@ export const ROUTES_BY_CATEGORY: RouteCategory[] = [
     ],
     groups: [
       {
-        title: "Helper Contracts",
+        title: "Anonymizer Contracts",
         routes: prefixRoutes("/helpers", HELPER_ROUTES),
       },
       {

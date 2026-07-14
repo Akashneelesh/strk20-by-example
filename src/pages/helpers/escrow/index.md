@@ -1,7 +1,7 @@
 ---
 title: Escrow
 version: 0.14.2
-description: A deferred-delivery escrow helper contract - send privately to someone who has not registered yet
+description: A deferred-delivery escrow anonymizer contract - send privately to someone who has not registered yet
 keywords: [escrow, helper, commitment, claim, secret, privacy_invoke]
 ---
 

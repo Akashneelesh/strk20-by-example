@@ -61,5 +61,11 @@ await provider.waitForTransaction(tx.transaction_hash)
   do not exist yet - a first deposit needs both.
 - The new note **matures 10 blocks after creation**. Spending it earlier
   produces a proof the contract rejects with `Note not mature`.
+- **Every deposit is screened.** FPI (the screening provider) screens the
+  depositing address and signs each deposit, and the pool verifies that
+  signature onchain - enforcement is part of the protocol since the v0.14.3
+  upgrade. Wallet and hosted-proving flows handle this step for you; if a
+  structurally valid deposit reverts, screening is the first thing to check.
+  See [Compliance & Auditing](/compliance).
 
 Next: [Transfer](/sdk/transfer) a note privately to another account.

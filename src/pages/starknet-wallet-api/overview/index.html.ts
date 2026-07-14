@@ -29,7 +29,7 @@ submission.</p>
 <p>Use this route when you are building an app <strong>on top of</strong> existing privacy
 wallets. If you are building the wallet itself, use the
 <a href="/sdk/getting-started">Build Privacy Wallets</a>. If your app needs private DeFi,
-pair this route with a <a href="/helpers/privacy-invoke">Helper Contract</a>.</p>
+pair this route with an <a href="/helpers/privacy-invoke">Anonymizer Contract</a>.</p>
 <h2>Why most dapps want this route</h2>
 <ul>
 <li><strong>No viewing keys in your app.</strong> The wallet holds the user&#39;s viewing key; your
@@ -44,7 +44,7 @@ actions.</li>
 <p>Your dapp talks to <code>starknet.js</code>, which reaches the user&#39;s privacy-enabled wallet
 through the Starknet Wallet API. The wallet runs the STRK20 SDK internally and
 settles against the privacy pool. For private DeFi, the same call path also triggers your app-specific
-<a href="/helpers/privacy-invoke">helper contract</a>.</p>
+<a href="/helpers/privacy-invoke">anonymizer contract</a>.</p>
 <h2>React hooks or direct WalletAccountV6?</h2>
 <p>There are two practical ways to use the Starknet Wallet API from a dapp, each with
 its own page in this section:</p>
@@ -68,7 +68,7 @@ the ZK proofs and signatures are managed wallet-side.</p>
 <li><strong>Swap</strong> - where the connected wallet supports it.</li>
 </ul>
 <p>Broader DeFi actions (lending, staking, custom flows) pair the Starknet Wallet
-API with an app-specific helper contract that the pool invokes atomically.</p>
+API with an app-specific anonymizer contract that the pool invokes atomically.</p>
 <h2>What to keep in mind</h2>
 <ul>
 <li><strong>Wallet support varies.</strong> Available actions depend on the connected wallet;
@@ -88,7 +88,7 @@ contract details for your target network before launch.</li>
 </thead>
 <tbody><tr>
 <td>A private dapp anywhere from private DeFi, private consumer apps, private games, etc.</td>
-<td><a href="/helpers/privacy-invoke">Helper Contracts</a> and Starknet Wallet API (this page)</td>
+<td><a href="/helpers/privacy-invoke">Anonymizer Contracts</a> and Starknet Wallet API (this page)</td>
 </tr>
 <tr>
 <td>A Starknet privacy wallet</td>
@@ -99,7 +99,7 @@ contract details for your target network before launch.</li>
 <ul>
 <li><a href="/starknet-wallet-api/starknet-start-hook">starknet-start</a></li>
 <li><a href="/starknet-wallet-api/starknet-js">starknet.js</a></li>
-<li><a href="/helpers/privacy-invoke">Helper Contract Anatomy</a></li>
+<li><a href="/helpers/privacy-invoke">Anonymizer Contract Anatomy</a></li>
 <li><a href="/sdk/getting-started">Build Privacy Wallets</a></li>
 </ul>
 `

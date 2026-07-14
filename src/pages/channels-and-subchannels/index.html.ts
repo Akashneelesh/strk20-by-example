@@ -57,9 +57,9 @@ channel key.</li>
 first empty slot, unmasking amounts and checking each note&#39;s nullifier
 against the on-chain nullifier set to skip spent ones.</li>
 </ol>
-<p>What is left is your spendable private balance. A stateless discovery service
-can run this scan on your behalf - you send the viewing key per request, it
-scans storage via RPC and returns decrypted notes without storing anything.</p>
+<p>What is left is your spendable private balance. A discovery service can run
+this scan on your behalf; see the SDK docs for how viewing-key material is
+handled in that flow.</p>
 <h2>Why this scales</h2>
 <p>The scan touches only channels addressed to <em>you</em> and the notes inside them.
 Cost is proportional to <strong>your own activity</strong> - how many counterparties pay you

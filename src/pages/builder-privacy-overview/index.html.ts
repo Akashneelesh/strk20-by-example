@@ -2,7 +2,7 @@
 export const version = "0.14.2"
 export const title = "Builder Privacy Overview"
 export const description =
-  "Choose the right STRK20 integration path: Starknet Wallet API, helper contracts, building privacy wallets, sub-accounts, or prover infrastructure."
+  "Choose the right STRK20 integration path: Starknet Wallet API, anonymizer contracts, building privacy wallets, sub-accounts, or prover infrastructure."
 export const githubLink = ""
 export const githubLabel = ""
 
@@ -13,7 +13,7 @@ export const keywords = [
   "wallet api",
   "build privacy wallets",
   "privacy wallet sdk",
-  "helper contracts",
+  "anonymizer contracts",
   "sub-accounts",
   "prover",
   "strk20",
@@ -35,7 +35,7 @@ lower-level route when your product needs more control.</p>
 </thead>
 <tbody><tr>
 <td>Build a private dapp anywhere from private DeFi, private consumer apps, private games, etc.</td>
-<td><a href="/helpers/privacy-invoke">Helper contracts</a> and <a href="/starknet-wallet-api/overview">Starknet Wallet API</a></td>
+<td><a href="/helpers/privacy-invoke">Anonymizer contracts</a> and <a href="/starknet-wallet-api/overview">Starknet Wallet API</a></td>
 <td>The wallet manages viewing keys, notes, proving, and submission; for DeFi, the pool calls your <code>privacy_invoke</code> adapter atomically, then credits the result back into private notes.</td>
 </tr>
 <tr>
@@ -66,13 +66,13 @@ user&#39;s privacy-enabled wallet to perform an action; the wallet handles priva
 state, proofs, and submission. A normal dapp should not receive the user&#39;s
 viewing key or manage note discovery directly. See the
 <a href="/starknet-wallet-api/overview">Starknet Wallet API overview</a>.</p>
-<h3>Helper contracts</h3>
-<p>Helper contracts, also called anonymizing contracts, are app-specific Cairo
+<h3>Anonymizer contracts</h3>
+<p>Anonymizer contracts, also called helper contracts, are app-specific Cairo
 adapters for private DeFi. The pool withdraws tokens to the helper, calls its
 <code>privacy_invoke</code> entry point, and the helper returns <code>OpenNoteDeposit</code>
 instructions for whatever should be credited back into private notes. This is the
 focus for <strong>core builders shipping private dapps</strong>. See
-<a href="/helpers/privacy-invoke">Helper Contract Anatomy</a>.</p>
+<a href="/helpers/privacy-invoke">Anonymizer Contract Anatomy</a>.</p>
 <h3>Build Privacy Wallets</h3>
 <p>The Build Privacy Wallets section is the lower-level SDK route for teams building
 <strong>privacy wallets on Starknet</strong>, account-controlled backends, and advanced
@@ -87,13 +87,17 @@ around it.</p>
 <h3>Prover backend</h3>
 <p>Most dapps do not need to operate proving infrastructure. Wallets,
 infrastructure teams, and advanced integrators may run their own prover when
-they need operational control over proof generation.</p>
+they need operational control over proof generation. Deposit screening applies
+regardless of proving route: FPI screens shielding addresses and signs each
+deposit, and the pool verifies the signature onchain, so a self-hosted prover
+meets the same deposit-screening requirement as hosted services.</p>
 <h2>Builder rules of thumb</h2>
 <ul>
 <li>Use the Starknet Wallet API first for user-facing private dapps.</li>
 <li>Use Build Privacy Wallets when you are building the wallet itself or need low-level SDK control.</li>
 <li>Do not ask a normal dapp user for their viewing key.</li>
-<li>For private DeFi integrations, expect both a Starknet Wallet API flow and an app-specific helper contract.</li>
+<li>For private DeFi integrations, expect both a Starknet Wallet API flow and an app-specific anonymizer contract.</li>
+<li>Deposits are screened on every route - self-hosted proving does not bypass onchain screening.</li>
 <li>Be explicit about what remains public: deposits, withdrawals, timing, and some app-side activity may still be visible.</li>
 <li>Verify wallet support, API versions, contract addresses, and compliance assumptions before launch.</li>
 </ul>
@@ -101,7 +105,7 @@ they need operational control over proof generation.</p>
 <ul>
 <li><a href="/what-is-strk20">What is STRK20?</a></li>
 <li><a href="/starknet-wallet-api/overview">Starknet Wallet API</a></li>
-<li><a href="/helpers/privacy-invoke">Helper Contract Anatomy</a></li>
+<li><a href="/helpers/privacy-invoke">Anonymizer Contract Anatomy</a></li>
 <li><a href="/sdk/getting-started">Build Privacy Wallets</a></li>
 </ul>
 `

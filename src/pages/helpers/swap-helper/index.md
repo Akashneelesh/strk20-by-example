@@ -1,7 +1,7 @@
 ---
 title: Swap Helper
 version: 0.14.2
-description: A DEX swap helper contract - trade privately through any AMM using the balance-delta idiom
+description: A DEX swap anonymizer contract - trade privately through any AMM using the balance-delta idiom
 keywords: [swap, amm, dex, helper, balance delta, privacy_invoke]
 ---
 

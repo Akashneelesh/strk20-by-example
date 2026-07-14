@@ -22,7 +22,7 @@ never go backwards:
 
 The fixed ordering removes state-machine ambiguity: there is exactly one way to
 encode a given semantic operation, which closes whole classes of ordering bugs.
-`InvokeExternal` is the composability hook - it calls a helper contract
+`InvokeExternal` is the composability hook - it calls an anonymizer contract
 (escrow, DEX adapter, lending) at most once per transaction.
 
 ## The balance invariant
@@ -63,7 +63,7 @@ virtual Starknet execution          ← anchored to a recent block's state
    compiles client → server actions)  here, at proving time
         │
         ▼
-Stwo proof generation               ← ~30 s on a local machine
+Stwo proof generation               ← ~29 s (12-core / 46 GiB; machine-dependent)
         │
         ▼
 submit tx (directly or via paymaster)

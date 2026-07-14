@@ -9,7 +9,7 @@ keywords:
     strk20,
     privacy stack,
     wallet api,
-    helper contracts,
+    anonymizer contracts,
     privacy sdk,
   ]
 ---
@@ -21,12 +21,12 @@ route that fits your product, and only move lower when you need more control.
 
 ## Choose your integration route
 
-| Builder goal                                                                                | Start with                                                                                           |
-| ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Build a private dapp anywhere from private DeFi, private consumer apps, private games, etc. | [Helper Contracts](/helpers/privacy-invoke) and [Starknet Wallet API](/starknet-wallet-api/overview) |
-| Build a privacy wallet or advanced backend                                                  | [Build Privacy Wallets](/sdk/getting-started)                                                        |
-| Run proof infrastructure yourself                                                           | Prover backend                                                                                       |
-| Hide a user's main-wallet link during account-based app activity                            | Private sub-accounts (coming soon)                                                                   |
+| Builder goal                                                                                | Start with                                                                                               |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Build a private dapp anywhere from private DeFi, private consumer apps, private games, etc. | [Anonymizer Contracts](/helpers/privacy-invoke) and [Starknet Wallet API](/starknet-wallet-api/overview) |
+| Build a privacy wallet or advanced backend                                                  | [Build Privacy Wallets](/sdk/getting-started)                                                            |
+| Run proof infrastructure yourself                                                           | Prover backend                                                                                           |
+| Hide a user's main-wallet link during account-based app activity                            | Private sub-accounts (coming soon)                                                                       |
 
 ## Core pieces
 
@@ -35,7 +35,7 @@ route that fits your product, and only move lower when you need more control.
 - **Starknet Wallet API / starknet.js:** the standard route for private dapps. The
   app asks the wallet to act; the wallet manages viewing keys, notes, proofs, and
   signatures.
-- **Helper contracts:** app-specific `privacy_invoke` adapters for DeFi. The pool
+- **Anonymizer contracts:** app-specific `privacy_invoke` adapters for DeFi. The pool
   calls the helper atomically, then credits the result back into private notes.
 - **Privacy SDK:** the low-level route for wallets and advanced integrations that
   need direct control over registration, channels, note discovery, and proving.
@@ -51,6 +51,6 @@ Deposits, withdrawals, timing, and some app-side activity may still be public.
 
 ## Read next
 
-- [Helper Contracts](/helpers/privacy-invoke)
+- [Anonymizer Contracts](/helpers/privacy-invoke)
 - [Starknet Wallet API](/starknet-wallet-api/overview)
 - [Build Privacy Wallets](/sdk/getting-started)

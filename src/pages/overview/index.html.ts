@@ -12,7 +12,7 @@ export const keywords = [
   "strk20",
   "privacy stack",
   "wallet api",
-  "helper contracts",
+  "anonymizer contracts",
   "privacy sdk",
 ]
 
@@ -31,7 +31,7 @@ route that fits your product, and only move lower when you need more control.</p
 </thead>
 <tbody><tr>
 <td>Build a private dapp anywhere from private DeFi, private consumer apps, private games, etc.</td>
-<td><a href="/helpers/privacy-invoke">Helper Contracts</a> and <a href="/starknet-wallet-api/overview">Starknet Wallet API</a></td>
+<td><a href="/helpers/privacy-invoke">Anonymizer Contracts</a> and <a href="/starknet-wallet-api/overview">Starknet Wallet API</a></td>
 </tr>
 <tr>
 <td>Build a privacy wallet or advanced backend</td>
@@ -53,7 +53,7 @@ notes and enables shielded balances, private transfers, and private DeFi.</li>
 <li><strong>Starknet Wallet API / starknet.js:</strong> the standard route for private dapps. The
 app asks the wallet to act; the wallet manages viewing keys, notes, proofs, and
 signatures.</li>
-<li><strong>Helper contracts:</strong> app-specific <code>privacy_invoke</code> adapters for DeFi. The pool
+<li><strong>Anonymizer contracts:</strong> app-specific <code>privacy_invoke</code> adapters for DeFi. The pool
 calls the helper atomically, then credits the result back into private notes.</li>
 <li><strong>Privacy SDK:</strong> the low-level route for wallets and advanced integrations that
 need direct control over registration, channels, note discovery, and proving.</li>
@@ -67,7 +67,7 @@ generation.</li>
 Deposits, withdrawals, timing, and some app-side activity may still be public.</p>
 <h2>Read next</h2>
 <ul>
-<li><a href="/helpers/privacy-invoke">Helper Contracts</a></li>
+<li><a href="/helpers/privacy-invoke">Anonymizer Contracts</a></li>
 <li><a href="/starknet-wallet-api/overview">Starknet Wallet API</a></li>
 <li><a href="/sdk/getting-started">Build Privacy Wallets</a></li>
 </ul>
