@@ -38,7 +38,11 @@ exist rather than a separate ecosystem.
    visible on-chain (depositor and amount), but the resulting note is encrypted.
 2. **Private transfers** - transfer value inside the pool by spending notes and
    creating new ones. Nobody watching the chain can tell who paid whom, or how much.
-3. **Withdraw** - move tokens back out of the pool to a public address.
+3. **DeFi** (optional) - interact with DeFi from the pool through an anonymizer
+   contract, with results credited back as private notes. This leg is
+   confidential rather than fully private: the link to the user is hidden, but
+   the app-side action and amounts can still be public.
+4. **Withdraw** - move tokens back out of the pool to a public address.
 
 ## What makes it different
 
